@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public float airSpeedRunning;
     public float jumpForce;
     public float wallJumpLerp = 10;
+    public float slideSpeed = 5;
 
     public LayerMask groundObjects;
     public LayerMask walls;
@@ -43,8 +44,10 @@ public class Player : MonoBehaviour
 
     bool canMove = true;
     bool wallGrab = false;
+    bool wallSlide = false;
     bool wallJumped = false;
     bool onWall = false;
+    bool groundTouch = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -84,12 +87,23 @@ public class Player : MonoBehaviour
     }
     private void WallJump()
     {
+        StopCoroutine(DisableMovement(0));
+        StartCoroutine(DisableMovement(.1f));
+
         Vector2 wallDir = onRightWall ? Vector2.left : Vector2.right;
 
-        BasicJump((Vector2.up / 1.5f + wallDir / 1.5f), true);
+        BasicJump((Vector2.up / 2f + wallDir / 2f), true);
 
         wallJumped = true;
     }
+
+    IEnumerator DisableMovement(float time)
+    {
+        canMove = false;
+        yield return new WaitForSeconds(time);
+        canMove = true;
+    }
+
     private void Walk(Vector2 dir)
     {
         if (!canMove)
@@ -122,10 +136,34 @@ public class Player : MonoBehaviour
             dir /= airSpeed;
 
         Walk(dir);
+        if (onWall && isGrounded)
+        {
+            onWall = false;
+            isGrounded = true;
+            if (x > 0.8f || x < -0.8f)
+            {
+                onWall = true;
+                isGrounded = false;
+            }
+        }
+        else
+        {
+            if (onWall && !isGrounded)
+            {
+                if (x != 0 && !wallGrab)
+                {
+                    wallSlide = true;
+                    WallSlide();
+                }
+            }
+        }
+
+        if (!onWall || isGrounded)
+            wallSlide = false;
 
         if (Input.GetButtonDown("Jump"))
         {
-            if(onWall) 
+            if(onWall && !isGrounded) 
             {
                 WallJump(); // this means that the player is touching a wall and must wall jump
             }
@@ -159,6 +197,21 @@ public class Player : MonoBehaviour
         onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
     }
 
+    private void WallSlide()
+    {
+        if (!canMove)
+            return;
+
+        bool pushingWall = false;
+        if ((rb.velocity.x > 0 && onRightWall) || (rb.velocity.x < 0 && onLeftWall))
+        {
+            pushingWall = true;
+        }
+        float push = pushingWall ? 0 : rb.velocity.x;
+
+        rb.velocity = new Vector2(rb.velocity.x, -slideSpeed);
+    }
+
     private void Animate()
     {
         if (moveDirection > 0 && !facingRight)
@@ -176,7 +229,7 @@ public class Player : MonoBehaviour
     {
         if(wall)
         {
-            float newForce = jumpForce * 2.25f;
+            float newForce = jumpForce * 2f;
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.velocity += dir * newForce;
         }
@@ -185,6 +238,7 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.velocity += dir * jumpForce;
         }        
+            Debug.Log(rb.velocity);
     }
 
     private void Flip()
