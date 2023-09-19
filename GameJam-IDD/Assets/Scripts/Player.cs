@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 
     [Header("Jump")]
     public float groundCheckDistance;
+    private float startGroundCheckDistance;
     private BoxCollider2D boxCollider2d;
 
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         jumpCount = maxJumpCount;
+        startGroundCheckDistance = groundCheckDistance;
     }
 
     // Update is called once per frame
@@ -59,6 +61,11 @@ public class Player : MonoBehaviour
         if (isGrounded)
         {
             jumpCount = maxJumpCount;
+            ResetJump();
+        }
+        else
+        {
+            groundCheckDistance = 0f;
         }
 
         //Move
@@ -108,17 +115,8 @@ public class Player : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size,0f,Vector2.down,groundCheckDistance, groundObjects);
         if (hit.collider != null)
         {
-            Debug.Log(hit.transform.name);
-            if(hit.transform.CompareTag("Ground"))
-            {
-                c = Color.blue;
-                isGrounded = true;
-            }
-            else
-            {
-                c = Color.red;
-                isGrounded = false;
-            }
+            c = Color.blue;
+            isGrounded = true;
         }
         else
         {
@@ -128,5 +126,9 @@ public class Player : MonoBehaviour
         Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
         Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
         Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, boxCollider2d.bounds.extents.y+groundCheckDistance), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
+    }
+    private void ResetJump()
+    {
+        groundCheckDistance = startGroundCheckDistance;
     }
 }
