@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
             {
                 WallJump(); // this means that the player is touching a wall and must wall jump
             }
-            else
+            else if(isGrounded)
             {
                 BasicJump(Vector2.up, false);
             }
