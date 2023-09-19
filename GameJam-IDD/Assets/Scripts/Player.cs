@@ -174,8 +174,17 @@ public class Player : MonoBehaviour
 
     private void BasicJump(Vector2 dir, bool wall)
     {
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
-        rb.velocity += dir * jumpForce;
+        if(wall)
+        {
+            float newForce = jumpForce * 2.25f;
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            rb.velocity += dir * newForce;
+        }
+        else
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            rb.velocity += dir * jumpForce;
+        }        
     }
 
     private void Flip()
