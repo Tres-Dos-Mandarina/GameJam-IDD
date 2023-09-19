@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     public float wallJumpLerp = 10;
 
     public LayerMask groundObjects;
+    public LayerMask walls;
+    private bool onRightWall;
+    private bool onLeftWall;
     public float checkRadius;
     public float jumpDamping = 0.5f;
     public int maxJumpCount;
@@ -79,7 +82,7 @@ public class Player : MonoBehaviour
 
         CheckGroundForJump(); // this function now takes into account the whole player collider when checking ground
         
-        WallCheck();
+        //WallCheck();
 
         Debug.Log(onWall);
 
@@ -88,22 +91,32 @@ public class Player : MonoBehaviour
             jumpCount = maxJumpCount;
         }
     }
-    private void WallCheck()
+    private void WallJump()
     {
-        Vector2 rayDirection = facingRight ? Vector2.right : Vector2.left;
+        Vector2 wallDir = onRightWall ? Vector2.left : Vector2.right;
 
-        Vector2 rayOrigin = new Vector2(transform.position.x + 0.3f, transform.position.y);
+        BasicJump((Vector2.up / 1.5f + wallDir / 1.5f), true);
 
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, 2000f);
-        Debug.Log(hit.point);
-        Debug.DrawRay(rayOrigin, rayDirection * 0.1f, Color.red);
-        /*if(hit.transform.tag != "Player")
-        {
-            onWall = true;
-        }
-        else
-            onWall = false;*/
+        if(jumpCount != 0)
+            jumpCount--;
+        wallJumped = true;
     }
+    //private void WallCheck()
+    //{
+    //    Vector2 rayDirection = facingRight ? Vector2.right : Vector2.left;
+
+    //    Vector2 rayOrigin = new Vector2(transform.position.x + 0.3f, transform.position.y);
+
+    //    RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, 2000f);
+    //    Debug.Log(hit.point);
+    //    Debug.DrawRay(rayOrigin, rayDirection * 0.1f, Color.red);
+    //    /*if(hit.transform.tag != "Player")
+    //    {
+    //        onWall = true;
+    //    }
+    //    else
+    //        onWall = false;*/
+    //}
     private void Walk(Vector2 dir)
     {
         if (!canMove)
@@ -137,10 +150,19 @@ public class Player : MonoBehaviour
 
         Walk(dir);
 
-        if (Input.GetButtonDown("Jump") && jumpCount > 0)
+        if (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.velocity += Vector2.up * jumpForce;            
+            if(onWall) 
+            {
+                WallJump(); // this means that the player is touching a wall and must wall jump
+                Debug.Log("ShouldJumpNow");
+            }
+            else
+            {
+                if (jumpCount > 0)
+                    BasicJump(Vector2.up, false);
+            }
+                     
 
             jumpCount--;
         }
@@ -148,6 +170,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0f);
+            
             jumpCount--;
         }
 
@@ -162,6 +185,13 @@ public class Player : MonoBehaviour
             airSpeed = startAirMoveSpeed;
         }
 
+        Debug.Log("Player is touching wall? " + onWall);
+        
+
+        onWall = Physics2D.OverlapCircle(new Vector2(transform.position.x+ .875f, transform.position.y), .15f, walls)
+            || Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
+        onRightWall = Physics2D.OverlapCircle(new Vector2(transform.position.x + .875f, transform.position.y), .15f, walls);
+        onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
     }
 
     private void Animate()
@@ -170,6 +200,17 @@ public class Player : MonoBehaviour
             Flip();
         else if (moveDirection < 0 && facingRight)
             Flip();
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(new Vector2(transform.position.x + .875f, transform.position.y), .15f);
+        Gizmos.DrawSphere(new Vector2(transform.position.x - .875f, transform.position.y), .15f);
+    }
+
+    private void BasicJump(Vector2 dir, bool wall)
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.velocity += dir * jumpForce;
     }
 
     private void Flip()
