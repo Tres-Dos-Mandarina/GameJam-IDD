@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -37,10 +38,12 @@ public class Player : MonoBehaviour
     [Header("Jump")]
     public float groundCheckDistance;
     private BoxCollider2D boxCollider2d;
+    private SpriteRenderer sr;
 
     bool canMove = true;
     bool wallGrab = false;
     bool wallJumped = false;
+    bool onWall = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -75,11 +78,31 @@ public class Player : MonoBehaviour
         //isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObjects);
 
         CheckGroundForJump(); // this function now takes into account the whole player collider when checking ground
+        
+        WallCheck();
+
+        Debug.Log(onWall);
 
         if (isGrounded)
         {
             jumpCount = maxJumpCount;
         }
+    }
+    private void WallCheck()
+    {
+        Vector2 rayDirection = facingRight ? Vector2.right : Vector2.left;
+
+        Vector2 rayOrigin = new Vector2(transform.position.x + 0.3f, transform.position.y);
+
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, 2000f);
+        Debug.Log(hit.point);
+        Debug.DrawRay(rayOrigin, rayDirection * 0.1f, Color.red);
+        /*if(hit.transform.tag != "Player")
+        {
+            onWall = true;
+        }
+        else
+            onWall = false;*/
     }
     private void Walk(Vector2 dir)
     {
