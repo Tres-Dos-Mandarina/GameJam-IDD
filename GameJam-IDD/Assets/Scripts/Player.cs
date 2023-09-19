@@ -83,9 +83,6 @@ public class Player : MonoBehaviour
         CheckGroundForJump(); // this function now takes into account the whole player collider when checking ground
         
         //WallCheck();
-
-        Debug.Log(onWall);
-
         if (isGrounded)
         {
             jumpCount = maxJumpCount;
@@ -155,7 +152,6 @@ public class Player : MonoBehaviour
             if(onWall) 
             {
                 WallJump(); // this means that the player is touching a wall and must wall jump
-                Debug.Log("ShouldJumpNow");
             }
             else
             {
@@ -184,9 +180,6 @@ public class Player : MonoBehaviour
             moveSpeed = startMoveSpeed;
             airSpeed = startAirMoveSpeed;
         }
-
-        Debug.Log("Player is touching wall? " + onWall);
-        
 
         onWall = Physics2D.OverlapCircle(new Vector2(transform.position.x+ .875f, transform.position.y), .15f, walls)
             || Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);

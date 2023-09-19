@@ -774,6 +774,9 @@ MonoBehaviour:
   groundObjects:
     serializedVersion: 2
     m_Bits: 64
+  walls:
+    serializedVersion: 2
+    m_Bits: 8
   checkRadius: 0.2
   jumpDamping: 0.5
   maxJumpCount: 1
@@ -791,7 +794,7 @@ GameObject:
   - component: {fileID: 735589875}
   - component: {fileID: 735589874}
   - component: {fileID: 735589873}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
