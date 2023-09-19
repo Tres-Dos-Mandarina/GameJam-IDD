@@ -20,10 +20,19 @@ public class Player : MonoBehaviour
     private bool isGrounded = false;
     private int jumpCount;
 
+    [Header("Jump")]
+    public float groundCheckDistance;
+    private BoxCollider2D boxCollider2d;
+
     // Start is called before the first frame update
     void Awake()
     {
+        #region GetComponents
         rb = GetComponent<Rigidbody2D>();
+        boxCollider2d = GetComponent<BoxCollider2D>();
+        #endregion
+        #region GameObject.Find()
+        #endregion
     }
     private void Start()
     {
@@ -43,7 +52,9 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         //Check if ground
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObjects);
+        //isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObjects);
+
+        CheckGroundForJump(); // this function now takes into account the whole player collider when checking ground
 
         if (isGrounded)
         {
@@ -90,5 +101,32 @@ public class Player : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+    private void CheckGroundForJump()
+    {
+        Color c = Color.red;
+        RaycastHit2D hit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size,0f,Vector2.down,groundCheckDistance, groundObjects);
+        if (hit.collider != null)
+        {
+            Debug.Log(hit.transform.name);
+            if(hit.transform.CompareTag("Ground"))
+            {
+                c = Color.blue;
+                isGrounded = true;
+            }
+            else
+            {
+                c = Color.red;
+                isGrounded = false;
+            }
+        }
+        else
+        {
+            c = Color.red;
+            isGrounded = false;
+        }
+        Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
+        Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
+        Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, boxCollider2d.bounds.extents.y+groundCheckDistance), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
     }
 }
