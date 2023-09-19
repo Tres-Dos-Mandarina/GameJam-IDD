@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     private bool onLeftWall;
     public float checkRadius;
     public float jumpDamping = 0.5f;
-    public int maxJumpCount;
 
     private Rigidbody2D rb;
     private bool facingRight = true;
@@ -28,7 +27,6 @@ public class Player : MonoBehaviour
     private float startAirMoveSpeed;
     private float moveDirection;
     private bool isGrounded = false;
-    private int jumpCount;
     private float currentSpeed = 0.0f;
 
     [Header("Acceleration and Deceleration")]
@@ -60,7 +58,6 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
-        jumpCount = maxJumpCount;
         startMoveSpeed = moveSpeed;
         startAirMoveSpeed = airSpeed;
     }
@@ -83,10 +80,7 @@ public class Player : MonoBehaviour
         CheckGroundForJump(); // this function now takes into account the whole player collider when checking ground
         
         //WallCheck();
-        if (isGrounded)
-        {
-            jumpCount = maxJumpCount;
-        }
+        
     }
     private void WallJump()
     {
@@ -94,26 +88,8 @@ public class Player : MonoBehaviour
 
         BasicJump((Vector2.up / 1.5f + wallDir / 1.5f), true);
 
-        if(jumpCount != 0)
-            jumpCount--;
         wallJumped = true;
     }
-    //private void WallCheck()
-    //{
-    //    Vector2 rayDirection = facingRight ? Vector2.right : Vector2.left;
-
-    //    Vector2 rayOrigin = new Vector2(transform.position.x + 0.3f, transform.position.y);
-
-    //    RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, 2000f);
-    //    Debug.Log(hit.point);
-    //    Debug.DrawRay(rayOrigin, rayDirection * 0.1f, Color.red);
-    //    /*if(hit.transform.tag != "Player")
-    //    {
-    //        onWall = true;
-    //    }
-    //    else
-    //        onWall = false;*/
-    //}
     private void Walk(Vector2 dir)
     {
         if (!canMove)
@@ -155,19 +131,15 @@ public class Player : MonoBehaviour
             }
             else
             {
-                if (jumpCount > 0)
-                    BasicJump(Vector2.up, false);
+                BasicJump(Vector2.up, false);
             }
-                     
-
-            jumpCount--;
+            
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             
-            jumpCount--;
         }
 
         if(Input.GetButtonDown("Sprint"))
