@@ -136,6 +136,38 @@ public class Player : MonoBehaviour
             dir /= airSpeed;
 
         Walk(dir);
+
+        Debug.Log(((x > 0.5f && onRightWall) || (x < -0.5f && onLeftWall)));
+
+        Debug.Log(onWall);
+        Debug.Log(canMove);
+
+        if (onWall && ((x > 0.5f && onRightWall) || (x < -0.5f && onLeftWall)) && canMove)
+        {
+            wallGrab = true;
+            wallSlide = false;
+        }
+        else if ((x < 0.4 || x > -0.4) || !onWall)
+        {
+            wallGrab = false;
+            wallSlide = false;
+        }
+
+        if (wallGrab)
+        {
+            rb.gravityScale = 0;
+            if (x > .2f || x < -.2f)
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+
+            float speedModifier = y > 0 ? .5f : 1;
+
+            rb.velocity = new Vector2(rb.velocity.x, y * (moveSpeed * speedModifier));
+        }
+        else
+        {
+            rb.gravityScale = 3;
+        }        
+
         if (onWall && isGrounded)
         {
             onWall = false;
