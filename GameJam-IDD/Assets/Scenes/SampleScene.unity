@@ -150,7 +150,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 256922570}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fd22a69b2d7bfd641aa5623c68027091, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -282,7 +282,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 309888093}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fd22a69b2d7bfd641aa5623c68027091, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -394,7 +394,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 309888093}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fd22a69b2d7bfd641aa5623c68027091, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -828,17 +828,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35638f255a62084f9f9588163777e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 10
-  cellingCheck: {fileID: 528070973}
-  groundCheck: {fileID: 415338743}
+  acceleration: 50
+  moveSpeed: 7
+  moveSpeedRunning: 10
+  airSpeed: 1.5
+  airSpeedRunning: 1.2
+  jumpForce: 12
+  wallJumpLerp: 10
   groundObjects:
     serializedVersion: 2
     m_Bits: 64
   checkRadius: 0.2
   jumpDamping: 0.5
   maxJumpCount: 1
-  groundCheckDistance: 2
+  accelerationTime: 1
+  decelerationTime: 3
+  groundCheckDistance: 0.25
 --- !u!1 &1542230749
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float acceleration;
     public float moveSpeed;
+    public float moveSpeedRunning;
+    public float airSpeed;
+    public float airSpeedRunning;
     public float jumpForce;
-    public Transform cellingCheck;
-    public Transform groundCheck;
+    public float wallJumpLerp = 10;
+
     public LayerMask groundObjects;
     public float checkRadius;
     public float jumpDamping = 0.5f;
@@ -15,15 +20,27 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool facingRight = true;
+    private float startMoveSpeed;
+    private float startAirMoveSpeed;
     private float moveDirection;
-    private bool isJumping = false;
     private bool isGrounded = false;
     private int jumpCount;
+    private float currentSpeed = 0.0f;
+
+    [Header("Acceleration and Deceleration")]
+    public float accelerationTime = 0.1f; // Tiempo de aceleración en segundos (6 frames a 60 FPS)
+    public float decelerationTime = 3.0f; // Tiempo de desaceleración en segundos
+    private float accelerationTimer;
+    private float decelerationTimer;
+    private float maxSpeed;
 
     [Header("Jump")]
     public float groundCheckDistance;
-    private float startGroundCheckDistance;
     private BoxCollider2D boxCollider2d;
+
+    bool canMove = true;
+    bool wallGrab = false;
+    bool wallJumped = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -38,14 +55,15 @@ public class Player : MonoBehaviour
     private void Start()
     {
         jumpCount = maxJumpCount;
-        startGroundCheckDistance = groundCheckDistance;
+        startMoveSpeed = moveSpeed;
+        startAirMoveSpeed = airSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Get Inputs
-        Inputs();
+        Movement();
 
         //Animation
         Animate();
@@ -61,29 +79,46 @@ public class Player : MonoBehaviour
         if (isGrounded)
         {
             jumpCount = maxJumpCount;
-            ResetJump();
+        }
+    }
+    private void Walk(Vector2 dir)
+    {
+        if (!canMove)
+            return;
+
+        if (wallGrab)
+            return;
+
+        if (!wallJumped)
+        {
+            rb.velocity = new Vector2(dir.x * moveSpeed, rb.velocity.y);
         }
         else
         {
-            groundCheckDistance = 0f;
+            rb.velocity = Vector2.Lerp(rb.velocity, (new Vector2(dir.x * moveSpeed, rb.velocity.y)), wallJumpLerp * Time.deltaTime);
         }
-
-        //Move
-        SettingVelocity();
     }
 
-    private void SettingVelocity()
-    {
-        rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
-    }
 
-    private void Inputs()
+    private void Movement()
     {
-        moveDirection = Input.GetAxis("Horizontal");
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+
+        float xRaw = Input.GetAxisRaw("Horizontal");
+        float yRaw = Input.GetAxisRaw("Vertical");
+        Vector2 dir = new Vector2(x, y);
+
+        if (!isGrounded)
+            dir /= airSpeed;
+
+        Walk(dir);
 
         if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.velocity += Vector2.up * jumpForce;            
+
             jumpCount--;
         }
 
@@ -93,7 +128,17 @@ public class Player : MonoBehaviour
             jumpCount--;
         }
 
-        isJumping = false; // ?
+        if(Input.GetButtonDown("Sprint"))
+        {
+            moveSpeed = moveSpeedRunning;
+            airSpeed = airSpeedRunning; 
+        }
+        if (Input.GetButtonUp("Sprint"))
+        {
+            moveSpeed = startMoveSpeed;
+            airSpeed = startAirMoveSpeed;
+        }
+
     }
 
     private void Animate()
@@ -126,9 +171,5 @@ public class Player : MonoBehaviour
         Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
         Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
         Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, boxCollider2d.bounds.extents.y+groundCheckDistance), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
-    }
-    private void ResetJump()
-    {
-        groundCheckDistance = startGroundCheckDistance;
     }
 }
