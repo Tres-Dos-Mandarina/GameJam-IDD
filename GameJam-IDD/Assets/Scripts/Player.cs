@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
     private float _startMoveSpeed;
     private float _startAirMoveSpeed;
     public bool _isGrounded = false;
-    private float _currentSpeed = 0.0f;
 
     private float _coyoteTime = 0.2f; //Tiempo en el que el jugador puede saltar despues caer de una plataforma
     private float _coyoteTimeCounter;
@@ -37,11 +36,13 @@ public class Player : MonoBehaviour
     private float _jumpBufferCounter;
 
     [Header("Acceleration and Deceleration")]
-    public float accelerationTime = 0.1f; // Tiempo de aceleración en segundos (6 frames a 60 FPS)
-    public float decelerationTime = 3.0f; // Tiempo de desaceleración en segundos
-    private float _accelerationTimer;
-    private float _decelerationTimer;
-    private float _maxSpeed;
+    //public float accelerationTime = 0.1f; // Tiempo de aceleración en segundos (6 frames a 60 FPS)
+    //public float decelerationTime = 3.0f; // Tiempo de desaceleración en segundos
+    //private float _accelerationTimer;
+    //private float _decelerationTimer;
+    //private float _maxSpeed;
+    private float lastSpeed;
+
 
     [Header("Jump")]
     public float groundCheckDistance;
@@ -99,15 +100,15 @@ public class Player : MonoBehaviour
         Debug.Log("Starting");
     }
     private void WallJump()
-    {
-        StopCoroutine(DisableMovement(0));
-        StartCoroutine(DisableMovement(.1f));
-
-        Vector2 wallDir = _onRightWall ? Vector2.left : Vector2.right;
-
-        BasicJump((Vector2.up / 2f + wallDir / 2f), true);
-
-        _wallJumped = true;
+     {
+         StopCoroutine(DisableMovement(0));
+         StartCoroutine(DisableMovement(.1f));
+    
+         Vector2 wallDir = _onRightWall ? Vector2.left : Vector2.right;
+    
+         BasicJump((Vector2.up / 2f + wallDir / 2f), true);
+    
+         _wallJumped = true;
     }
 
     IEnumerator DisableMovement(float time)
@@ -125,6 +126,7 @@ public class Player : MonoBehaviour
         if (_wallGrab)
             return;
 
+        if (Mathf.Abs(dir.x) < lastSpeed) dir.x = 0;
         if (!_wallJumped)
         {
             _rb.velocity = new Vector2(dir.x * moveSpeed, _rb.velocity.y);
@@ -135,32 +137,36 @@ public class Player : MonoBehaviour
         }
     }
 
-
     private void Movement()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        Vector2 dir = new Vector2(0, 0);
 
-        animator.SetFloat("Speed",Mathf.Abs(x));
+        dir.x = Input.GetAxis("Horizontal");
+        dir.y = Input.GetAxis("Vertical");
 
-        Animate(x);
+        //if (Mathf.Abs(dir.x) < lastSpeed) dir.x = 0;
+
+
+        //animator.SetFloat("Speed",Mathf.Abs(x));
+
+        Animate(dir.x);
 
 
         float xRaw = Input.GetAxisRaw("Horizontal");
         float yRaw = Input.GetAxisRaw("Vertical");
-        Vector2 dir = new Vector2(x, y);
 
         if (!_isGrounded)
             dir /= airSpeed;
 
         Walk(dir);
-
-        if (_onWall && ((x > 0.5f && _onRightWall) || (x < -0.5f && _onLeftWall)) && _canMove)
+        lastSpeed = Mathf.Abs(dir.x);
+        
+        if (_onWall && ((dir.x > 0.5f && _onRightWall) || (dir.x < -0.5f && _onLeftWall)) && _canMove)
         {
             _wallGrab = true;
             _wallSlide = false;
         }
-        else if ((x < 0.4 || x > -0.4) || !_onWall)
+        else if ((dir.x < 0.4 || dir.x > -0.4) || !_onWall)
         {
             _wallGrab = false;
             _wallSlide = false;
@@ -186,7 +192,7 @@ public class Player : MonoBehaviour
         {
             _onWall = false;
             _isGrounded = true;
-            if (x > 0.8f || x < -0.8f)
+            if (dir.x > 0.8f || dir.x < -0.8f)
             {
                 _onWall = true;
                 _isGrounded = false;
@@ -196,7 +202,7 @@ public class Player : MonoBehaviour
         {
             if (_onWall && !_isGrounded)
             {
-                if (x != 0 && !_wallGrab)
+                if (dir.x != 0 && !_wallGrab)
                 {
                     _wallSlide = true;
                     WallSlide(slideSpeed);
@@ -264,6 +270,7 @@ public class Player : MonoBehaviour
             || Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
         _onRightWall = Physics2D.OverlapCircle(new Vector2(transform.position.x + .875f, transform.position.y), .15f, walls);
         _onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
+
     }
 
     private void WallSlide(float speed)
@@ -309,7 +316,7 @@ public class Player : MonoBehaviour
             _onJump.Raise(this, "jumped");
         }
     }
-
+    
     private void Flip()
     {
         _facingRight = !_facingRight;

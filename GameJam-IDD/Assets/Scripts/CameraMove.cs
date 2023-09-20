@@ -21,8 +21,10 @@ public class CameraMove : MonoBehaviour
     public float distance = 0;
 
     private int direction = 0;
-    private float lastspeed = 0;
-
+    private float lastSpeed = 0;
+    
+    [Header("Y Camera")]
+    public bool followYPlayer= false;
     [Range(-3f, 3f)]
     public float verticalPos = 0;
 
@@ -103,13 +105,16 @@ public class CameraMove : MonoBehaviour
         velocity = playerRB.velocity;
 
         direction = (velocity.x > 0) ? 1 : -1;
-        if (Mathf.Abs(velocity.x) < lastspeed) direction = 0;
+        if (Mathf.Abs(velocity.x) < lastSpeed) direction = 0;
         if (velocity.x == 0) direction = 0;
 
-        transform.position = new Vector3(playerRB.position.x + newPos, playerRB.position.y+verticalPos, transform.position.z);
+        //Sube y baja con el player
+        if (followYPlayer) transform.position = new Vector3(playerRB.position.x + newPos, playerRB.position.y + verticalPos, transform.position.z);
+        else transform.position = new Vector3(playerRB.position.x + newPos, transform.position.y, transform.position.z);
+
         newPos = Mathf.Lerp(newPos, distance * direction, Time.deltaTime * cameraSpeed);
 
-        lastspeed = Mathf.Abs(velocity.x);
+        lastSpeed = Mathf.Abs(velocity.x);
     }
 }
     
