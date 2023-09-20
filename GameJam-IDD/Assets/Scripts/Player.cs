@@ -127,6 +127,10 @@ public class Player : MonoBehaviour
             return;
 
         if (Mathf.Abs(dir.x) < lastSpeed) dir.x = 0;
+
+
+        animator.SetFloat("Speed", Mathf.Abs(dir.x));
+
         if (!_wallJumped)
         {
             _rb.velocity = new Vector2(dir.x * moveSpeed, _rb.velocity.y);
@@ -144,13 +148,7 @@ public class Player : MonoBehaviour
         dir.x = Input.GetAxis("Horizontal");
         dir.y = Input.GetAxis("Vertical");
 
-        //if (Mathf.Abs(dir.x) < lastSpeed) dir.x = 0;
-
-
-        //animator.SetFloat("Speed",Mathf.Abs(x));
-
         Animate(dir.x);
-
 
         float xRaw = Input.GetAxisRaw("Horizontal");
         float yRaw = Input.GetAxisRaw("Vertical");
