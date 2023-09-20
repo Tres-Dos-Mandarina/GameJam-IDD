@@ -27,7 +27,7 @@ public class PlayerEvents : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _onLand.Raise(this, " ");
+        //_onLand.Raise(this, " ");
         
         if (collision.gameObject.CompareTag("Death"))
         {

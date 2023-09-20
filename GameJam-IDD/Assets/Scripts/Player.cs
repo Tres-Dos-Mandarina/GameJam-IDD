@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
+    public Animator animator;
     public float acceleration;
     public float moveSpeed;
     public float moveSpeedRunning;
@@ -26,7 +27,6 @@ public class Player : MonoBehaviour
     private bool _facingRight = true;
     private float _startMoveSpeed;
     private float _startAirMoveSpeed;
-    private float _moveDirection;
     public bool _isGrounded = false;
     private float _currentSpeed = 0.0f;
 
@@ -81,8 +81,6 @@ public class Player : MonoBehaviour
         //Get Inputs
         Movement();
 
-        //Animation
-        Animate();
 
     }
     private void FixedUpdate()
@@ -142,6 +140,11 @@ public class Player : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
+
+        animator.SetFloat("Speed",Mathf.Abs(x));
+
+        Animate(x);
+
 
         float xRaw = Input.GetAxisRaw("Horizontal");
         float yRaw = Input.GetAxisRaw("Vertical");
@@ -278,7 +281,7 @@ public class Player : MonoBehaviour
         _rb.velocity = new Vector2(_rb.velocity.x, -speed);
     }
 
-    private void Animate()
+    private void Animate(float _moveDirection)
     {
         if (_moveDirection > 0 && !_facingRight)
             Flip();
