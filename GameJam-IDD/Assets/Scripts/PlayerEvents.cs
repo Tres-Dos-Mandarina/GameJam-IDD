@@ -13,10 +13,12 @@ public class PlayerEvents : MonoBehaviour
     {
         PlayerEnteredNewLevel();
     }
-    public void PlayerEnteredNewLevel()
+
+    private void PlayerEnteredNewLevel()
     {
         OnPlayerNewLevel.Raise(this, transform.position);
     }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Death"))
@@ -25,7 +27,4 @@ public class PlayerEvents : MonoBehaviour
             OnPlayerDeath.Raise(this, collision.gameObject.name);
         }
     }
-
-    
-
 }

@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
     private GameObject player;
-    #region GameEvents
-        public GameEvent OnPlayerStart;
-    #endregion
+    
+    [Header("Game Events")]
+    public GameEvent OnGameStart;
+    
 
     #region Player Information
     private Vector3 newPlayerStartPosition;
     #endregion
+    
     private void Awake()
     {
         if(instance == null)
@@ -28,22 +31,15 @@ public class GameManager : MonoBehaviour
     }
     public void GameStart()
     {
-        OnPlayerStart.Raise(this, "DoInitialize");
+        OnGameStart.Raise(this, "DoInitialize");
     }
-        
-    public void GoalHandler(Component sender, object data)
-    {
-        if (sender is Goal)
-        {
-            
-        }
-    }   
 
     public void HandlePlayerDeath(Component sender, object data)
     {
         Debug.Log("Player died because of: " + (string)data);
         DoPlayerRestart();
     }
+    
     public void HandlePlayerNewLevel(Component sender, object data)
     {
         Debug.Log((Vector3?)data);
@@ -56,4 +52,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("This is where player should spawn now: " + newPlayerStartPosition);
         player.transform.position = newPlayerStartPosition;
     }
+    
+    public void HandlePlayerGoal(Component sender, object data)
+    {
+        if (sender is Goal)
+        {
+            if (data is string)
+            {
+                Debug.Log(data);
+            }
+        }
+    } 
 }

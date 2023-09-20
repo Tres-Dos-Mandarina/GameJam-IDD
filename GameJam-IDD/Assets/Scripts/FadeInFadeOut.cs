@@ -5,11 +5,7 @@ using UnityEngine;
 public class FadeInFadeOut : MonoBehaviour
 {
     public Animator animator;
-
-    private void Start()
-    {
-        //FadeIn();
-    }
+    
     public void FadeOut(Component sender, object data)
     {
         Debug.Log("FadeOut");

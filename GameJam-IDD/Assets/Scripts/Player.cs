@@ -17,60 +17,60 @@ public class Player : MonoBehaviour
 
     public LayerMask groundObjects;
     public LayerMask walls;
-    private bool onRightWall;
-    private bool onLeftWall;
+    private bool _onRightWall;
+    private bool _onLeftWall;
     public float checkRadius;
     public float jumpDamping = 0.5f;
 
-    private Rigidbody2D rb;
-    private bool facingRight = true;
-    private float startMoveSpeed;
-    private float startAirMoveSpeed;
-    private float moveDirection;
-    private bool isGrounded = false;
-    private float currentSpeed = 0.0f;
+    private Rigidbody2D _rb;
+    private bool _facingRight = true;
+    private float _startMoveSpeed;
+    private float _startAirMoveSpeed;
+    private float _moveDirection;
+    private bool _isGrounded = false;
+    private float _currentSpeed = 0.0f;
 
-    private float coyoteTime = 0.2f; //Tiempo en el que el jugador puede saltar despues caer de una plataforma
-    private float coyoteTimeCounter;
+    private float _coyoteTime = 0.2f; //Tiempo en el que el jugador puede saltar despues caer de una plataforma
+    private float _coyoteTimeCounter;
 
-    private float jumpBufferTime = 0.2f; //Tiempo en el que salta al tocar el suelo si ha saltado el player en el aire
-    private float jumpBufferCounter;
+    private float _jumpBufferTime = 0.2f; //Tiempo en el que salta al tocar el suelo si ha saltado el player en el aire
+    private float _jumpBufferCounter;
 
     [Header("Acceleration and Deceleration")]
     public float accelerationTime = 0.1f; // Tiempo de aceleración en segundos (6 frames a 60 FPS)
     public float decelerationTime = 3.0f; // Tiempo de desaceleración en segundos
-    private float accelerationTimer;
-    private float decelerationTimer;
-    private float maxSpeed;
+    private float _accelerationTimer;
+    private float _decelerationTimer;
+    private float _maxSpeed;
 
     [Header("Jump")]
     public float groundCheckDistance;
-    private BoxCollider2D boxCollider2d;
-    private SpriteRenderer sr;
+    private BoxCollider2D _boxCollider2d;
+    private SpriteRenderer _sr;
 
-    bool canMove = true;
-    bool wallGrab = false;
-    bool wallSlide = false;
-    bool wallJumped = false;
-    bool onWall = false;
-    bool groundTouch = false;
+    bool _canMove = true;
+    bool _wallGrab = false;
+    bool _wallSlide = false;
+    bool _wallJumped = false;
+    bool _onWall = false;
+    bool _groundTouch = false;
 
-    GameEvent onGoalReached;
+    GameEvent _onGoalReached;
 
     // Start is called before the first frame update
     void Awake()
     {
         #region GetComponents
-        rb = GetComponent<Rigidbody2D>();
-        boxCollider2d = GetComponent<BoxCollider2D>();
+        _rb = GetComponent<Rigidbody2D>();
+        _boxCollider2d = GetComponent<BoxCollider2D>();
         #endregion
         #region GameObject.Find()
         #endregion
     }
     private void Start()
     {
-        startMoveSpeed = moveSpeed;
-        startAirMoveSpeed = airSpeed;
+        _startMoveSpeed = moveSpeed;
+        _startAirMoveSpeed = airSpeed;
     }
 
     // Update is called once per frame
@@ -93,18 +93,7 @@ public class Player : MonoBehaviour
         //WallCheck();
         
     }
-    #region Game Events
-    public void GoalHandler(Component sender, object data)
-    {
-        if (sender is Goal)
-        {
-            if (data is string)
-            {
-                Debug.Log(data);
-            }
-        }
-    }
-    #endregion
+    
     public void OnGameStart(Component sender, object data)
     {
         Debug.Log("Starting");
@@ -114,35 +103,35 @@ public class Player : MonoBehaviour
         StopCoroutine(DisableMovement(0));
         StartCoroutine(DisableMovement(.1f));
 
-        Vector2 wallDir = onRightWall ? Vector2.left : Vector2.right;
+        Vector2 wallDir = _onRightWall ? Vector2.left : Vector2.right;
 
         BasicJump((Vector2.up / 2f + wallDir / 2f), true);
 
-        wallJumped = true;
+        _wallJumped = true;
     }
 
     IEnumerator DisableMovement(float time)
     {
-        canMove = false;
+        _canMove = false;
         yield return new WaitForSeconds(time);
-        canMove = true;
+        _canMove = true;
     }
 
     private void Walk(Vector2 dir)
     {
-        if (!canMove)
+        if (!_canMove)
             return;
 
-        if (wallGrab)
+        if (_wallGrab)
             return;
 
-        if (!wallJumped)
+        if (!_wallJumped)
         {
-            rb.velocity = new Vector2(dir.x * moveSpeed, rb.velocity.y);
+            _rb.velocity = new Vector2(dir.x * moveSpeed, _rb.velocity.y);
         }
         else
         {
-            rb.velocity = Vector2.Lerp(rb.velocity, (new Vector2(dir.x * moveSpeed, rb.velocity.y)), wallJumpLerp * Time.deltaTime);
+            _rb.velocity = Vector2.Lerp(_rb.velocity, (new Vector2(dir.x * moveSpeed, _rb.velocity.y)), wallJumpLerp * Time.deltaTime);
         }
     }
 
@@ -156,23 +145,23 @@ public class Player : MonoBehaviour
         float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
 
-        if (!isGrounded)
+        if (!_isGrounded)
             dir /= airSpeed;
 
         Walk(dir);
 
-        if (onWall && ((x > 0.5f && onRightWall) || (x < -0.5f && onLeftWall)) && canMove)
+        if (_onWall && ((x > 0.5f && _onRightWall) || (x < -0.5f && _onLeftWall)) && _canMove)
         {
-            wallGrab = true;
-            wallSlide = false;
+            _wallGrab = true;
+            _wallSlide = false;
         }
-        else if ((x < 0.4 || x > -0.4) || !onWall)
+        else if ((x < 0.4 || x > -0.4) || !_onWall)
         {
-            wallGrab = false;
-            wallSlide = false;
+            _wallGrab = false;
+            _wallSlide = false;
         }
 
-        if (wallGrab)
+        if (_wallGrab)
         {
             //rb.gravityScale = 0;
             //if (x > .2f || x < -.2f)
@@ -185,74 +174,74 @@ public class Player : MonoBehaviour
         }
         else
         {
-            rb.gravityScale = 3;
+            _rb.gravityScale = 3;
         }        
 
-        if (onWall && isGrounded)
+        if (_onWall && _isGrounded)
         {
-            onWall = false;
-            isGrounded = true;
+            _onWall = false;
+            _isGrounded = true;
             if (x > 0.8f || x < -0.8f)
             {
-                onWall = true;
-                isGrounded = false;
+                _onWall = true;
+                _isGrounded = false;
             }
         }
         else
         {
-            if (onWall && !isGrounded)
+            if (_onWall && !_isGrounded)
             {
-                if (x != 0 && !wallGrab)
+                if (x != 0 && !_wallGrab)
                 {
-                    wallSlide = true;
+                    _wallSlide = true;
                     WallSlide(slideSpeed);
                 }
             }
         }
 
-        if (!onWall || isGrounded)
-            wallSlide = false;
+        if (!_onWall || _isGrounded)
+            _wallSlide = false;
 
         //Coyote Time
-        if (isGrounded)
+        if (_isGrounded)
         {
-            coyoteTimeCounter = coyoteTime;
+            _coyoteTimeCounter = _coyoteTime;
         }
         else 
         {
-            coyoteTimeCounter -= Time.deltaTime;
+            _coyoteTimeCounter -= Time.deltaTime;
         }
 
         //Jump Buffering
         if (Input.GetButtonDown("Jump"))
         {
-            jumpBufferCounter = jumpBufferTime;
+            _jumpBufferCounter = _jumpBufferTime;
         }
         else
         {
-            jumpBufferCounter -= Time.deltaTime;
+            _jumpBufferCounter -= Time.deltaTime;
         }
 
-        if (jumpBufferCounter > 0)
+        if (_jumpBufferCounter > 0)
         {
 
-            if (onWall && coyoteTimeCounter <= 0) 
+            if (_onWall && _coyoteTimeCounter <= 0) 
             {
                 WallJump(); // this means that the player is touching a wall and must wall jump
-                jumpBufferCounter = 0;
+                _jumpBufferCounter = 0;
             }
-            else if(coyoteTimeCounter > 0)
+            else if(_coyoteTimeCounter > 0)
             {
                 BasicJump(Vector2.up, false);
-                jumpBufferCounter = 0;
+                _jumpBufferCounter = 0;
             }
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+        if (Input.GetButtonUp("Jump") && _rb.velocity.y > 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            _rb.velocity = new Vector2(_rb.velocity.x, 0f);
 
-            coyoteTimeCounter = 0f;
+            _coyoteTimeCounter = 0f;
         }
 
         if(Input.GetButtonDown("Sprint"))
@@ -262,36 +251,36 @@ public class Player : MonoBehaviour
         }
         if (Input.GetButtonUp("Sprint"))
         {
-            moveSpeed = startMoveSpeed;
-            airSpeed = startAirMoveSpeed;
+            moveSpeed = _startMoveSpeed;
+            airSpeed = _startAirMoveSpeed;
         }
 
-        onWall = Physics2D.OverlapCircle(new Vector2(transform.position.x+ .875f, transform.position.y), .15f, walls)
+        _onWall = Physics2D.OverlapCircle(new Vector2(transform.position.x+ .875f, transform.position.y), .15f, walls)
             || Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
-        onRightWall = Physics2D.OverlapCircle(new Vector2(transform.position.x + .875f, transform.position.y), .15f, walls);
-        onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
+        _onRightWall = Physics2D.OverlapCircle(new Vector2(transform.position.x + .875f, transform.position.y), .15f, walls);
+        _onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
     }
 
     private void WallSlide(float speed)
     {
-        if (!canMove)
+        if (!_canMove)
             return;
 
         bool pushingWall = false;
-        if ((rb.velocity.x > 0 && onRightWall) || (rb.velocity.x < 0 && onLeftWall))
+        if ((_rb.velocity.x > 0 && _onRightWall) || (_rb.velocity.x < 0 && _onLeftWall))
         {
             pushingWall = true;
         }
-        float push = pushingWall ? 0 : rb.velocity.x;
+        float push = pushingWall ? 0 : _rb.velocity.x;
 
-        rb.velocity = new Vector2(rb.velocity.x, -speed);
+        _rb.velocity = new Vector2(_rb.velocity.x, -speed);
     }
 
     private void Animate()
     {
-        if (moveDirection > 0 && !facingRight)
+        if (_moveDirection > 0 && !_facingRight)
             Flip();
-        else if (moveDirection < 0 && facingRight)
+        else if (_moveDirection < 0 && _facingRight)
             Flip();
     }
     private void OnDrawGizmos()
@@ -305,34 +294,34 @@ public class Player : MonoBehaviour
         if(wall)
         {
             float newForce = jumpForce * 2f;
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-            rb.velocity += dir * newForce;
+            _rb.velocity = new Vector2(_rb.velocity.x, 0f);
+            _rb.velocity += dir * newForce;
         }
         else
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-            rb.velocity += dir * jumpForce;
+            _rb.velocity = new Vector2(_rb.velocity.x, 0f);
+            _rb.velocity += dir * jumpForce;
         }
     }
 
     private void Flip()
     {
-        facingRight = !facingRight;
+        _facingRight = !_facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
     private void CheckGroundForJump()
     {
         Color c = Color.red;
-        RaycastHit2D hit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size,0f,Vector2.down,groundCheckDistance, groundObjects);
+        RaycastHit2D hit = Physics2D.BoxCast(_boxCollider2d.bounds.center, _boxCollider2d.bounds.size,0f,Vector2.down,groundCheckDistance, groundObjects);
         if (hit.collider != null)
         {
             c = Color.blue;
-            isGrounded = true;
+            _isGrounded = true;
         }
         else
         {
             c = Color.red;
-            isGrounded = false;
+            _isGrounded = false;
         }
     }
 }
