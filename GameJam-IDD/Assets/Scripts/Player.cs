@@ -55,6 +55,8 @@ public class Player : MonoBehaviour
     bool onWall = false;
     bool groundTouch = false;
 
+    GameEvent onGoalReached;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -91,6 +93,18 @@ public class Player : MonoBehaviour
         //WallCheck();
         
     }
+
+    public void GoalHandler(Component sender, object data)
+    {
+        if (sender is Goal)
+        {
+            if (data is string)
+            {
+                Debug.Log(data);
+            }
+        }
+    }
+
     private void WallJump()
     {
         StopCoroutine(DisableMovement(0));
