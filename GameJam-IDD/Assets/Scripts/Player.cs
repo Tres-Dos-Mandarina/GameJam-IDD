@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
         //WallCheck();
         
     }
-
+    #region Game Events
     public void GoalHandler(Component sender, object data)
     {
         if (sender is Goal)
@@ -104,7 +104,11 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+    #endregion
+    public void OnGameStart(Component sender, object data)
+    {
+        Debug.Log("Starting");
+    }
     private void WallJump()
     {
         StopCoroutine(DisableMovement(0));
@@ -156,11 +160,6 @@ public class Player : MonoBehaviour
             dir /= airSpeed;
 
         Walk(dir);
-
-        Debug.Log(((x > 0.5f && onRightWall) || (x < -0.5f && onLeftWall)));
-
-        Debug.Log(onWall);
-        Debug.Log(canMove);
 
         if (onWall && ((x > 0.5f && onRightWall) || (x < -0.5f && onLeftWall)) && canMove)
         {
@@ -335,8 +334,5 @@ public class Player : MonoBehaviour
             c = Color.red;
             isGrounded = false;
         }
-        Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
-        Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
-        Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, boxCollider2d.bounds.extents.y+groundCheckDistance), Vector2.down * (boxCollider2d.bounds.extents.y + groundCheckDistance), c);
     }
 }

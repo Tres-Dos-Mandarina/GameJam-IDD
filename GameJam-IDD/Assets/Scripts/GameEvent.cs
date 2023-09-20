@@ -14,7 +14,7 @@ public class GameEvent : ScriptableObject
             listeners[i].OnEventRaised(sender, data);
         }
     }
-    
+
     // Manage Listeners
     public void RegisterListener(GameEventListener listener)
     {

@@ -1,52 +1,56 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
+    private GameObject player;
+    #region GameEvents
+        public GameEvent OnPlayerStart;
+    #endregion
 
+    #region Player Information
+    private Vector3 newPlayerStartPosition;
+    #endregion
     private void Awake()
     {
-        if (instance != null)
-        {
-            Debug.LogError("Found more than one Game Events Manager in the scene.");
-        }
-        instance = this;
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
+
+        player = GameObject.Find("Player");
+    }
+    private void Start()
+    {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
+
+        GameStart();
+    }
+    public void GameStart()
+    {
+        OnPlayerStart.Raise(this, "DoInitialize");
     }
 
-    public event Action onGoalReached;
-    public void GoalReached() 
+    public void HandlePlayerDeath(Component sender, object data)
     {
-        if (onGoalReached != null) 
-        {
-            onGoalReached();
-        }
+        Debug.Log("Player died because of: " + (string)data);
+        DoPlayerRestart();
     }
-    
-    public event Action onRestartLevel;
-    public void RestartLevel() 
+    public void HandlePlayerNewLevel(Component sender, object data)
     {
-        if (onRestartLevel != null) 
-        {
-            onRestartLevel();
-        }
+        Debug.Log((Vector3?)data);
+        if(data is Vector3)
+            newPlayerStartPosition = (Vector3)data;
     }
 
-    public event Action<GameObject> onChangeCameraTarget;
-    public void ChangeCameraTarget(GameObject newTarget) 
+    public void DoPlayerRestart()
     {
-        if (onChangeCameraTarget != null) 
-        {
-            onChangeCameraTarget(newTarget);
-        }
-    }
-
-    public event Action onPlayerRespawn;
-    public void PlayerRespawn() 
-    {
-        if (onPlayerRespawn != null) 
-        {
-            onPlayerRespawn();
-        }
+        Debug.Log("This is where player should spawn now: " + newPlayerStartPosition);
+        player.transform.position = newPlayerStartPosition;
     }
 }
