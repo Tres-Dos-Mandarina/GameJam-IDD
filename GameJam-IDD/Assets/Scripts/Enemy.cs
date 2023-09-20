@@ -28,6 +28,10 @@ public class Enemy : MonoBehaviour
     public EnemyState enemyState = EnemyState.Idle;
     public EnemyDirection enemyDirection;
     public float movementSpeed;
+    [HideInInspector] public Vector3 enemyPosSave;
+    [HideInInspector] public EnemyState enemyStateSave;
+    [HideInInspector] public EnemyDirection enemyDirectionSave;
+    [HideInInspector] public float movementSpeedSave;
 
     [Header("Game Events")] 
     public GameEvent onPlayerDeath;
@@ -37,6 +41,12 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+
+        // Save Enemy Config
+        enemyPosSave = this.transform.position;
+        enemyStateSave = enemyState;
+        enemyDirectionSave = enemyDirection;
+        movementSpeedSave = movementSpeed;
     }
 
     void Update()
@@ -116,13 +126,8 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.transform.CompareTag("Player"))
-        {
-            Debug.Log("Player Hit!");
-            
+        {         
             onPlayerDeath.Raise(this, null);
-            
-            // SetEnemyState(EnemyState.Idle);
-            // ApplyMovement(0f, 0f);
         }
     }
 }

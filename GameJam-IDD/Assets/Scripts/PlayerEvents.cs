@@ -24,15 +24,4 @@ public class PlayerEvents : MonoBehaviour
     {
         OnPlayerNewLevel.Raise(this, transform.position);
     }
-    
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //_onLand.Raise(this, " ");
-        
-        if (collision.gameObject.CompareTag("Death"))
-        {
-            Debug.Log("Player died (so sad)");
-            OnPlayerDeath.Raise(this, collision.gameObject.name);
-        }
-    }
 }

@@ -95,10 +95,6 @@ public class Player : MonoBehaviour
         
     }
     
-    public void OnGameStart(Component sender, object data)
-    {
-        Debug.Log("Starting");
-    }
     private void WallJump()
      {
          StopCoroutine(DisableMovement(0));

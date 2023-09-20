@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 8843604941914718468}
   - component: {fileID: 8263780196942472610}
   - component: {fileID: 7521418858616103411}
+  - component: {fileID: 6580657149753459960}
+  - component: {fileID: 225094185159056109}
   m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +104,9 @@ MonoBehaviour:
   enemyState: 0
   enemyDirection: 0
   movementSpeed: 5
+  enemyStateSave: 0
+  enemyDirectionSave: 0
+  movementSpeedSave: 0
   onPlayerDeath: {fileID: 11400000, guid: 3a4d8bcb8838f944d973a085b2a3f5d0, type: 2}
 --- !u!61 &8263780196942472610
 BoxCollider2D:
@@ -175,3 +180,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6580657149753459960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910307164154884659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9598e31b65f4248b4e4e546b363a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &225094185159056109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910307164154884659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d13fdd69cd32c24388a3ed425732b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 94474b2a49f61924dbcae1c0f451bd1b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6580657149753459960}
+        m_TargetAssemblyTypeName: EnemyReset, Assembly-CSharp
+        m_MethodName: EnemyStartSet
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

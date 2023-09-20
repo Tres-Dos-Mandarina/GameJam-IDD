@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,7 +12,6 @@ public class GameManager : MonoBehaviour
     [Header("Game Events")]
     public GameEvent OnGameStart;
     
-
     #region Player Information
     private Vector3 newPlayerStartPosition;
     #endregion
@@ -45,12 +45,21 @@ public class GameManager : MonoBehaviour
     
     public void HandlePlayerGoal(Component sender, object data)
     {
-        if (sender is Goal)
-        {
-            if (data is string)
-            {
-                Debug.Log(data);
-            }
-        }
+        Debug.Log("Handling player goal");
+        HandleNextLevel();
     } 
+
+    public void HandleNextLevel()
+    {
+        StartCoroutine(HandleTransition());
+    }
+
+    IEnumerator HandleTransition()
+    {
+        // TODO Stop Player movement
+        GetComponent<Transition>().FadeOut();
+        yield return new WaitForSeconds(2f);
+        HandlePlayerRestart();
+        GetComponent<Transition>().FadeIn();
+    }
 }
