@@ -30,6 +30,12 @@ public class Player : MonoBehaviour
     private bool isGrounded = false;
     private float currentSpeed = 0.0f;
 
+    private float coyoteTime = 0.2f; //Tiempo en el que el jugador puede saltar despues caer de una plataforma
+    private float coyoteTimeCounter;
+
+    private float jumpBufferTime = 0.2f; //Tiempo en el que salta al tocar el suelo si ha saltado el player en el aire
+    private float jumpBufferCounter;
+
     [Header("Acceleration and Deceleration")]
     public float accelerationTime = 0.1f; // Tiempo de aceleración en segundos (6 frames a 60 FPS)
     public float decelerationTime = 3.0f; // Tiempo de desaceleración en segundos
@@ -193,23 +199,46 @@ public class Player : MonoBehaviour
         if (!onWall || isGrounded)
             wallSlide = false;
 
+        //Coyote Time
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else 
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        //Jump Buffering
         if (Input.GetButtonDown("Jump"))
         {
-            if(onWall && !isGrounded) 
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
+        if (jumpBufferCounter > 0)
+        {
+
+            if (onWall && coyoteTimeCounter <= 0) 
             {
                 WallJump(); // this means that the player is touching a wall and must wall jump
+                jumpBufferCounter = 0;
             }
-            else if(isGrounded)
+            else if(coyoteTimeCounter > 0)
             {
                 BasicJump(Vector2.up, false);
+                jumpBufferCounter = 0;
             }
-            
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0f);
-            
+
+            coyoteTimeCounter = 0f;
         }
 
         if(Input.GetButtonDown("Sprint"))
