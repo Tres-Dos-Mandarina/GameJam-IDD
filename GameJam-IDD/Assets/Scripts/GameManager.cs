@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(this.gameObject);
-
-        player = GameObject.Find("Player");
     }
     private void Start()
     {
@@ -31,26 +29,18 @@ public class GameManager : MonoBehaviour
     }
     public void GameStart()
     {
-        OnGameStart.Raise(this, "DoInitialize");
+        OnGameStart.Raise(this, "GameStart Event On air");
     }
 
     public void HandlePlayerDeath(Component sender, object data)
     {
-        Debug.Log("Player died because of: " + (string)data);
-        DoPlayerRestart();
+        Debug.Log("Player Died");
+        HandlePlayerRestart();
     }
     
-    public void HandlePlayerNewLevel(Component sender, object data)
+    public void HandlePlayerRestart()
     {
-        Debug.Log((Vector3?)data);
-        if(data is Vector3)
-            newPlayerStartPosition = (Vector3)data;
-    }
-
-    public void DoPlayerRestart()
-    {
-        Debug.Log("This is where player should spawn now: " + newPlayerStartPosition);
-        player.transform.position = newPlayerStartPosition;
+        GameStart();
     }
     
     public void HandlePlayerGoal(Component sender, object data)
