@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private float _startMoveSpeed;
     private float _startAirMoveSpeed;
     private float _moveDirection;
-    private bool _isGrounded = false;
+    public bool _isGrounded = false;
     private float _currentSpeed = 0.0f;
 
     private float _coyoteTime = 0.2f; //Tiempo en el que el jugador puede saltar despues caer de una plataforma
@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
 
     GameEvent _onGoalReached;
     public GameEvent _onJump;
+
 
     // Start is called before the first frame update
     void Awake()

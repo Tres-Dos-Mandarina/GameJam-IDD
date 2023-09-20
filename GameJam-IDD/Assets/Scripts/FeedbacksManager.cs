@@ -18,4 +18,8 @@ public class FeedbacksManager : MonoBehaviour
             jumpFeedback.PlayFeedbacks();
         }
     }
+    public void PlayLandingFeedback(Component sender, object data)
+    {
+        landingFeedback.PlayFeedbacks();
+    }
 }
