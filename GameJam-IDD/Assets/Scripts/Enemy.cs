@@ -1,54 +1,128 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum EnemyState
 {
-    IDLE,
-    MOVING
+    Idle,
+    Moving
+}
+
+public enum EnemyDirection
+{
+    Right,
+    Left,
+    Up,
+    Down
 }
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private EnemyState _enemyState;
-
-    private Rigidbody2D rb;
-
+    private Rigidbody2D _rb;
+    private readonly Quaternion _leftRot = new Quaternion(0f, 1f, 0f, 0f);
+    private readonly Quaternion _upRot = new Quaternion(0f, 0f, 0.707f, 0.707f);
+    private readonly Quaternion _downRot = new Quaternion(0f, 0f, -0.707f, 0.707f);
+    
+    [Header("Basic Configuration of the Enemy")]
+    public EnemyState enemyState = EnemyState.Idle;
+    public EnemyDirection enemyDirection;
     public float movementSpeed;
-    private Vector3 startPos;
+
+    [Header("Game Events")] 
+    public GameEvent onPlayerDeath;
+
+    #region LifeCycle
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-
-        startPos = transform.position;
-    }
-
-    void Start()
-    {
-        _enemyState = EnemyState.IDLE;
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Interaction") && _enemyState == EnemyState.IDLE)
+        if (Input.GetButtonDown("Interaction") && enemyState == EnemyState.Idle)
         {
-            _enemyState = EnemyState.MOVING;
-        }
-
-        if (_enemyState == EnemyState.MOVING)
-        {
-            rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+            SetEnemyState(EnemyState.Moving);
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (enemyState != EnemyState.Moving) return;
+        switch (enemyDirection)
+        {
+            case EnemyDirection.Right:
+                ApplyMovement(movementSpeed, 0f);
+                break;
+            case EnemyDirection.Left:
+                ApplyMovement(-movementSpeed, 0f);
+                break;
+            case EnemyDirection.Up:
+                ApplyMovement(0f, movementSpeed);
+                break;
+            case EnemyDirection.Down:
+                ApplyMovement(0f, -movementSpeed);
+                break;
+        }
+    }
+
+    #endregion
+    
+    #region Setters
+
+    public void SetEnemyPosition(Vector3 newPosition)
+    {
+        transform.position = newPosition;
+    }
+
+    public void SetEnemyState(EnemyState newState)
+    {
+        enemyState = newState;
+    }
+
+    public void SetEnemyDirection(EnemyDirection newDirection)
+    {
+        enemyDirection = newDirection;
+        switch (enemyDirection)
+        {
+            case EnemyDirection.Right:
+                transform.rotation = Quaternion.identity;
+                break;
+            case EnemyDirection.Left:
+                transform.rotation = _leftRot;
+                break;
+            case EnemyDirection.Up:
+                transform.rotation = _upRot;
+                break;
+            case EnemyDirection.Down:
+                transform.rotation = _downRot;
+                break;
+        }
+    }
+
+    public void SetMovementSpeed(float newSpeed)
+    {
+        movementSpeed = newSpeed;
+    }
+    
+    private void ApplyMovement(float x, float y)
+    {
+        _rb.velocity = new Vector2(x, y);
+    }
+
+    #endregion
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.transform.CompareTag("Player"))
         {
             Debug.Log("Player Hit!");
-            _enemyState = EnemyState.IDLE;
-            rb.velocity = new Vector2(0, 0);
-            transform.position = startPos;
+            
+            onPlayerDeath.Raise(this, null);
+            
+            // SetEnemyState(EnemyState.Idle);
+            // ApplyMovement(0f, 0f);
         }
     }
 }
