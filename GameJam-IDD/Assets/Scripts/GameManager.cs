@@ -24,17 +24,20 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        if(instance == null)
-            instance = this;
-        else
-            Destroy(this.gameObject);
-
         GameStart();
     }
     public void GameStart()
     {
         OnPlayerStart.Raise(this, "DoInitialize");
     }
+        
+    public void GoalHandler(Component sender, object data)
+    {
+        if (sender is Goal)
+        {
+            
+        }
+    }   
 
     public void HandlePlayerDeath(Component sender, object data)
     {

@@ -9,6 +9,6 @@ public class Goal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("Sending Goal Event");
-        onGoalReached.Raise(this, "Goal Reached mf");
+        onGoalReached.Raise(this, "Goal Reached mf"); //GM
     }
 }

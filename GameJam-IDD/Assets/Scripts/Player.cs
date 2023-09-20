@@ -174,13 +174,14 @@ public class Player : MonoBehaviour
 
         if (wallGrab)
         {
-            rb.gravityScale = 0;
-            if (x > .2f || x < -.2f)
-                rb.velocity = new Vector2(rb.velocity.x, 0);
+            //rb.gravityScale = 0;
+            //if (x > .2f || x < -.2f)
+            //    rb.velocity = new Vector2(rb.velocity.x, 0);
 
-            float speedModifier = y > 0 ? .5f : 1;
+            //float speedModifier = y > 0 ? .5f : 1;
 
-            rb.velocity = new Vector2(rb.velocity.x, y * (moveSpeed * speedModifier));
+            //rb.velocity = new Vector2(rb.velocity.x, y * (moveSpeed * speedModifier));
+            WallSlide(slideSpeed/4.0f);
         }
         else
         {
@@ -204,7 +205,7 @@ public class Player : MonoBehaviour
                 if (x != 0 && !wallGrab)
                 {
                     wallSlide = true;
-                    WallSlide();
+                    WallSlide(slideSpeed);
                 }
             }
         }
@@ -271,7 +272,7 @@ public class Player : MonoBehaviour
         onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
     }
 
-    private void WallSlide()
+    private void WallSlide(float speed)
     {
         if (!canMove)
             return;
@@ -283,7 +284,7 @@ public class Player : MonoBehaviour
         }
         float push = pushingWall ? 0 : rb.velocity.x;
 
-        rb.velocity = new Vector2(rb.velocity.x, -slideSpeed);
+        rb.velocity = new Vector2(rb.velocity.x, -speed);
     }
 
     private void Animate()
@@ -311,8 +312,7 @@ public class Player : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.velocity += dir * jumpForce;
-        }        
-            Debug.Log(rb.velocity);
+        }
     }
 
     private void Flip()
