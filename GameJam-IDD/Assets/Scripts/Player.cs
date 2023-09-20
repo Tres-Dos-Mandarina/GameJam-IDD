@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
     bool _groundTouch = false;
 
     GameEvent _onGoalReached;
+    public GameEvent _onJump;
 
     // Start is called before the first frame update
     void Awake()
@@ -301,6 +302,7 @@ public class Player : MonoBehaviour
         {
             _rb.velocity = new Vector2(_rb.velocity.x, 0f);
             _rb.velocity += dir * jumpForce;
+            _onJump.Raise(this, "jumped");
         }
     }
 
