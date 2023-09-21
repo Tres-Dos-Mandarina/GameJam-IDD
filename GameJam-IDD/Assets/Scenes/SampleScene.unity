@@ -2441,7 +2441,7 @@ PrefabInstance:
       objectReference: {fileID: 7285414010641220165}
     - target: {fileID: 8363568994913302509, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
       propertyPath: minVelocityToPlayFeedback
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2578,6 +2578,14 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 5146986213132493015}
+    - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.340289
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.340289
+      objectReference: {fileID: 0}
     - target: {fileID: 8408371413399468381, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_Name
       value: Cameras
