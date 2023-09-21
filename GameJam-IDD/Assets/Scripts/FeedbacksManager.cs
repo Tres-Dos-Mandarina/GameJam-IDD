@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Feedbacks;
+using System;
+
 public class FeedbacksManager : MonoBehaviour
 {
     [Header("Player")]
@@ -10,6 +12,7 @@ public class FeedbacksManager : MonoBehaviour
     private Rigidbody2D rb;
     public MMFeedbacks jumpFeedback;
     public MMFeedbacks landingFeedback;
+    
     private void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -26,4 +29,5 @@ public class FeedbacksManager : MonoBehaviour
     {
         landingFeedback.PlayFeedbacks();
     }
+    
 }

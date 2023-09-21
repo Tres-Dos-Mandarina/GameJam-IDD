@@ -7,16 +7,24 @@ public class PlayerEvents : MonoBehaviour
     private Player player;
     private Rigidbody2D rb;
     private FeedbacksManager feedbacksManager;
+    private BoxCollider2D _boxCollider2d;
+    public LayerMask groundObjects;
+    private Animator anim;
     #region Player Events
-        public GameEvent OnPlayerDeath;
+    public GameEvent OnPlayerDeath;
         public GameEvent OnPlayerNewLevel;
     #endregion
 
     public GameEvent _onLand;
+    [Header("Check Ground")]
+    public float groundCheckDistance;
+    public bool playerIsFalling = false;
     private void Awake()
     {
         player = GetComponent<Player>();
         rb = player.GetComponent<Rigidbody2D>();
+        _boxCollider2d = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
         feedbacksManager = GameObject.Find("FeedbacksManager").GetComponent<FeedbacksManager>();
     }
     private void Start()
@@ -32,14 +40,38 @@ public class PlayerEvents : MonoBehaviour
     {
         player.animator.SetBool("isJumping", false);
     }
+    private void Update()
+    {
+        ThrowRaycastToKnowIfFalling();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
         if (collision.relativeVelocity.y > feedbacksManager.minVelocityToPlayFeedback)
         {
-            Debug.Log(collision.relativeVelocity.y);
             _onLand.Raise(this, null);
         }
             
+    }
+    // Here it goes the code to fall and jump
+
+    public void ThrowRaycastToKnowIfFalling()
+    {
+        Color c = Color.red;
+        RaycastHit2D hit = Physics2D.BoxCast(_boxCollider2d.bounds.center, _boxCollider2d.bounds.size, 0f, Vector2.down, groundCheckDistance, groundObjects);
+        if (hit.collider != null)
+        {
+            c = Color.blue;
+
+            playerIsFalling = false;
+            anim.SetBool("isFalling", false);
+        }
+        else
+        {
+            c = Color.red;
+            playerIsFalling = rb.velocity.y < 0;
+            anim.SetBool("isFalling", rb.velocity.y < 0);
+        }
+        Debug.Log(playerIsFalling);
     }
 }

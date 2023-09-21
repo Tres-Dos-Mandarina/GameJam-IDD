@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
 
         dir.x = Input.GetAxis("Horizontal");
         dir.y = Input.GetAxis("Vertical");
-        if (!(_rb.velocity.magnitude < 0.1) && _isGrounded)
+        if (((_rb.velocity.x < -0.1) || (_rb.velocity.x > 0.1f)) && _isGrounded)
         {
             animator.SetBool("isMoving", true);
         }
@@ -329,7 +329,7 @@ public class Player : MonoBehaviour
         _facingRight = !_facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
-    private void CheckGroundForJump()
+    public void CheckGroundForJump()
     {
         Color c = Color.red;
         RaycastHit2D hit = Physics2D.BoxCast(_boxCollider2d.bounds.center, _boxCollider2d.bounds.size,0f,Vector2.down,groundCheckDistance, groundObjects);
