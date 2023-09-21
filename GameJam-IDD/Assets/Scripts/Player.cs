@@ -79,11 +79,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Get Inputs
-        if (_canMove)
-            Movement();
-        else
-            _rb.velocity = Vector3.zero;
+        Movement();
     }
     private void FixedUpdate()
     {
@@ -96,15 +92,15 @@ public class Player : MonoBehaviour
         
     }
     private void WallJump()
-     {
-         StopCoroutine(DisableMovement(0));
-         StartCoroutine(DisableMovement(.1f));
+    {
+        StopCoroutine(DisableMovement(0));
+        StartCoroutine(DisableMovement(.1f));
     
-         Vector2 wallDir = _onRightWall ? Vector2.left : Vector2.right;
+        Vector2 wallDir = _onRightWall ? Vector2.left : Vector2.right;
+        Debug.Log(wallDir);
+        BasicJump((Vector2.up / 2f + wallDir / 2f), true);
     
-         BasicJump((Vector2.up / 2f + wallDir / 2f), true);
-    
-         _wallJumped = true;
+        _wallJumped = true;
     }
     public IEnumerator DisableMovement(float time)
     {

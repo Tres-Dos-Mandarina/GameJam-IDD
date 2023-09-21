@@ -72,6 +72,5 @@ public class PlayerEvents : MonoBehaviour
             playerIsFalling = rb.velocity.y < 0;
             anim.SetBool("isFalling", rb.velocity.y < 0);
         }
-        Debug.Log(playerIsFalling);
     }
 }
