@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
 
         // Save Enemy Config
-        enemyPosSave = this.transform.position;
+        enemyPosSave = transform.position;
         enemyStateSave = enemyState;
         enemyDirectionSave = enemyDirection;
         movementSpeedSave = movementSpeed;
@@ -59,7 +59,11 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (enemyState != EnemyState.Moving) return;
+        if (enemyState != EnemyState.Moving)
+        {
+            _rb.velocity = new Vector2(0f, 0f);
+            return;
+        }
         switch (enemyDirection)
         {
             case EnemyDirection.Right:
@@ -126,8 +130,9 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.transform.CompareTag("Player"))
-        {         
+        {
             onPlayerDeath.Raise(this, null);
+            SetEnemyState(EnemyState.Idle);
         }
     }
 }
