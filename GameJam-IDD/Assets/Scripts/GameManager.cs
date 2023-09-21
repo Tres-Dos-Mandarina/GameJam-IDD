@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
@@ -45,21 +46,22 @@ public class GameManager : MonoBehaviour
     
     public void HandlePlayerGoal(Component sender, object data)
     {
-        Debug.Log("Handling player goal");
-        HandleNextLevel();
+        HandleNextLevel((int)data);
     } 
 
-    public void HandleNextLevel()
+    public void HandleNextLevel(int sceneNum)
     {
-        StartCoroutine(HandleTransition());
+        StartCoroutine(HandleLoadScene(sceneNum));
     }
 
-    IEnumerator HandleTransition()
+    IEnumerator HandleLoadScene(int sceneNum)
     {
         // TODO Stop Player movement
         GetComponent<Transition>().FadeOut();
         yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(sceneNum + 1);
         HandlePlayerRestart();
+        yield return new WaitForSeconds(0.5f);
         GetComponent<Transition>().FadeIn();
     }
 }

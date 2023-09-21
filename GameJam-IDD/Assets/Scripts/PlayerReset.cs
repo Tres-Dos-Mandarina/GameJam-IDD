@@ -16,8 +16,7 @@ public class PlayerReset : MonoBehaviour
     {
         if (sender is GameManager)
         {
-            this.gameObject.transform.localPosition = spawnPoint.position;
-
+            this.gameObject.transform.position = spawnPoint.position;
         }
     }
 }

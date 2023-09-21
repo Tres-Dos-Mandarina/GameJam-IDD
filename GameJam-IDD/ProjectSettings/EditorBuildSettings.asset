@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TransitionScene.unity
+    guid: e1da1b31071d48643aba06499bb5d9d2
   m_configObjects: {}
