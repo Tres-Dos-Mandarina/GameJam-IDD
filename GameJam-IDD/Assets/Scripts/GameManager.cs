@@ -49,20 +49,20 @@ public class GameManager : MonoBehaviour
     
     public void HandlePlayerGoal(Component sender, object data)
     {
-        HandleNextLevel((int)data);
+        HandleNextLevel();
     } 
 
-    public void HandleNextLevel(int sceneNum)
+    public void HandleNextLevel()
     {
-        StartCoroutine(HandleLoadScene(sceneNum));
+        StartCoroutine(HandleLoadScene());
     }
 
-    IEnumerator HandleLoadScene(int sceneNum)
+    IEnumerator HandleLoadScene()
     {
         // TODO Stop Player movement
         GetComponent<Transition>().FadeOut();
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(sceneNum + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         HandlePlayerRestart();
         yield return new WaitForSeconds(0.5f);
         GetComponent<Transition>().FadeIn();
