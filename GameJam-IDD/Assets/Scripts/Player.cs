@@ -264,10 +264,10 @@ public class Player : MonoBehaviour
             airSpeed = _startAirMoveSpeed;
         }
 
-        _onWall = Physics2D.OverlapCircle(new Vector2(transform.position.x+ .875f, transform.position.y), .15f, walls)
-            || Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
-        _onRightWall = Physics2D.OverlapCircle(new Vector2(transform.position.x + .875f, transform.position.y), .15f, walls);
-        _onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .875f, transform.position.y), .15f, walls);
+        _onWall = Physics2D.OverlapCircle(new Vector2(transform.position.x+ .400f, transform.position.y), .15f, walls)
+            || Physics2D.OverlapCircle(new Vector2(transform.position.x - .300f, transform.position.y), .15f, walls);
+        _onRightWall = Physics2D.OverlapCircle(new Vector2(transform.position.x + .400f, transform.position.y), .15f, walls);
+        _onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .300f, transform.position.y), .15f, walls);
 
     }
 
@@ -295,8 +295,8 @@ public class Player : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(new Vector2(transform.position.x + .875f, transform.position.y), .15f);
-        Gizmos.DrawSphere(new Vector2(transform.position.x - .875f, transform.position.y), .15f);
+        Gizmos.DrawSphere(new Vector2(transform.position.x + .400f, transform.position.y), .15f);
+        Gizmos.DrawSphere(new Vector2(transform.position.x - .300f, transform.position.y), .15f);
     }
 
     private void BasicJump(Vector2 dir, bool wall)
