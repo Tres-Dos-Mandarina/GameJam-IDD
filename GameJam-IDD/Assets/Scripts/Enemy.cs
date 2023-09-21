@@ -96,6 +96,10 @@ public class Enemy : MonoBehaviour
         if(data is EnemyState)
             SetEnemyState((EnemyState)data);
     }
+    public void StopEnemy(Component sender, object data)
+    {
+            SetEnemyState(EnemyState.Idle);
+    }
 
     public void SetEnemyDirection(EnemyDirection newDirection)
     {

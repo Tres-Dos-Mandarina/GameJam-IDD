@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightSwitch : MonoBehaviour
 {
     public GameEvent onLightTurnOff;
+    public AudioSource switchSound;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class LightSwitch : MonoBehaviour
             if (Input.GetButtonDown("Interaction"))
             {
                 Debug.Log("Interaction______________________________________________________________________________________________________________");
+                switchSound.Play();
                 onLightTurnOff.Raise(this, EnemyState.Moving);
             }
         }

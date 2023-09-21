@@ -29,10 +29,12 @@ public class Player : MonoBehaviour
     private float _startAirMoveSpeed;
     public bool _isGrounded = false;
 
-    private float _coyoteTime = 0.2f; //Tiempo en el que el jugador puede saltar despues caer de una plataforma
+    [SerializeField]
+    private float _coyoteTime; //Tiempo en el que el jugador puede saltar despues caer de una plataforma
     private float _coyoteTimeCounter;
 
-    private float _jumpBufferTime = 0.2f; //Tiempo en el que salta al tocar el suelo si ha saltado el player en el aire
+    [SerializeField]
+    private float _jumpBufferTime; //Tiempo en el que salta al tocar el suelo si ha saltado el player en el aire
     private float _jumpBufferCounter;
 
     [Header("Acceleration and Deceleration")]
@@ -49,12 +51,12 @@ public class Player : MonoBehaviour
     private BoxCollider2D _boxCollider2d;
     private SpriteRenderer _sr;
 
-    bool _canMove = true;
-    bool _wallGrab = false;
-    bool _wallSlide = false;
-    bool _wallJumped = false;
-    bool _onWall = false;
-    bool _groundTouch = false;
+    public bool _canMove = true;
+    private bool _wallGrab = false;
+    private bool _wallSlide = false;
+    private bool _wallJumped = false;
+    private bool _onWall = false;
+    private bool _groundTouch = false;
 
     GameEvent _onGoalReached;
     public GameEvent _onJump;
@@ -78,7 +80,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Get Inputs
-        Movement();
+        if (_canMove)
+            Movement();
+        else
+            _rb.velocity = Vector3.zero;
     }
     private void FixedUpdate()
     {
@@ -101,11 +106,15 @@ public class Player : MonoBehaviour
     
          _wallJumped = true;
     }
-    IEnumerator DisableMovement(float time)
+    public IEnumerator DisableMovement(float time)
     {
         _canMove = false;
         yield return new WaitForSeconds(time);
         _canMove = true;
+    }
+    public void DisableMovement()
+    {
+        _canMove = false;
     }
     private void Walk(Vector2 dir)
     {
@@ -208,7 +217,9 @@ public class Player : MonoBehaviour
         //}
 
         if (!_onWall || _isGrounded)
+        {
             _wallSlide = false;
+        }
 
         //Coyote Time
         if (_isGrounded)
