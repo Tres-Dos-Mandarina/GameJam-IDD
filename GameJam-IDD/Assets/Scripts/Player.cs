@@ -203,6 +203,10 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        //if(_isGrounded)
+        //{
+        //    animator.SetBool("isJumping",false);
+        //}
 
         if (!_onWall || _isGrounded)
             _wallSlide = false;
@@ -297,6 +301,7 @@ public class Player : MonoBehaviour
 
     private void BasicJump(Vector2 dir, bool wall)
     {
+        animator.SetBool("isJumping", true);
         if(wall)
         {
             float newForce = jumpForce * 2f;
