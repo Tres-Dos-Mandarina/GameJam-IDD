@@ -4,12 +4,16 @@ using UnityEngine;
 using MoreMountains.Feedbacks;
 public class FeedbacksManager : MonoBehaviour
 {
+    [Header("Player")]
+    public float minVelocityToPlayFeedback;
     private Player player;
+    private Rigidbody2D rb;
     public MMFeedbacks jumpFeedback;
     public MMFeedbacks landingFeedback;
     private void Awake()
     {
-        player = GetComponent<Player>();
+        player = GameObject.Find("Player").GetComponent<Player>();
+        rb = player.GetComponent<Rigidbody2D>();
     }
     public void PlayJumpFeedback(Component sender, object data)
     {
@@ -20,7 +24,6 @@ public class FeedbacksManager : MonoBehaviour
     }
     public void PlayLandingFeedback(Component sender, object data)
     {
-        Debug.Log("Landed!");
         landingFeedback.PlayFeedbacks();
     }
 }

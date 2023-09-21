@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerEvents : MonoBehaviour
 {
     private Player player;
+    private Rigidbody2D rb;
+    private FeedbacksManager feedbacksManager;
     #region Player Events
         public GameEvent OnPlayerDeath;
         public GameEvent OnPlayerNewLevel;
@@ -14,6 +16,8 @@ public class PlayerEvents : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<Player>();
+        rb = player.GetComponent<Rigidbody2D>();
+        feedbacksManager = GameObject.Find("FeedbacksManager").GetComponent<FeedbacksManager>();
     }
     private void Start()
     {
@@ -30,6 +34,12 @@ public class PlayerEvents : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _onLand.Raise(this, null);
+        
+        if (collision.relativeVelocity.y > feedbacksManager.minVelocityToPlayFeedback)
+        {
+            Debug.Log(collision.relativeVelocity.y);
+            _onLand.Raise(this, null);
+        }
+            
     }
 }
