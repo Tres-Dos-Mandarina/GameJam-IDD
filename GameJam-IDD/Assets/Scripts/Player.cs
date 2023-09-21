@@ -74,14 +74,11 @@ public class Player : MonoBehaviour
         _startMoveSpeed = moveSpeed;
         _startAirMoveSpeed = airSpeed;
     }
-
     // Update is called once per frame
     void Update()
     {
         //Get Inputs
         Movement();
-
-
     }
     private void FixedUpdate()
     {
@@ -93,7 +90,6 @@ public class Player : MonoBehaviour
         //WallCheck();
         
     }
-    
     private void WallJump()
      {
          StopCoroutine(DisableMovement(0));
@@ -105,14 +101,12 @@ public class Player : MonoBehaviour
     
          _wallJumped = true;
     }
-
     IEnumerator DisableMovement(float time)
     {
         _canMove = false;
         yield return new WaitForSeconds(time);
         _canMove = true;
     }
-
     private void Walk(Vector2 dir)
     {
         if (!_canMove)
@@ -135,7 +129,6 @@ public class Player : MonoBehaviour
             _rb.velocity = Vector2.Lerp(_rb.velocity, (new Vector2(dir.x * moveSpeed, _rb.velocity.y)), wallJumpLerp * Time.deltaTime);
         }
     }
-
     private void Movement()
     {
         Vector2 dir = new Vector2(0, 0);
@@ -278,7 +271,6 @@ public class Player : MonoBehaviour
         
 
     }
-
     private void WallSlide(float speed)
     {
         if (!_canMove)
@@ -293,7 +285,6 @@ public class Player : MonoBehaviour
 
         _rb.velocity = new Vector2(_rb.velocity.x, -speed);
     }
-
     private void Animate(float _moveDirection)
     {
         if (_moveDirection > 0 && !_facingRight)
@@ -306,7 +297,6 @@ public class Player : MonoBehaviour
         Gizmos.DrawSphere(new Vector2(transform.position.x + .400f, transform.position.y), .15f);
         Gizmos.DrawSphere(new Vector2(transform.position.x - .300f, transform.position.y), .15f);
     }
-
     private void BasicJump(Vector2 dir, bool wall)
     {
         animator.SetBool("isJumping", true);
@@ -323,7 +313,6 @@ public class Player : MonoBehaviour
             _onJump.Raise(this, "jumped");
         }
     }
-    
     private void Flip()
     {
         _facingRight = !_facingRight;
