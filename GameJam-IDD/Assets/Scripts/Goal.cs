@@ -5,11 +5,10 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     [SerializeField] GameEvent onGoalReached;
-    [SerializeField] private int sceneNum;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("Sending Goal Event");
-        onGoalReached.Raise(this, sceneNum); //GM
+        onGoalReached.Raise(this, null); //GM
     }
 }
