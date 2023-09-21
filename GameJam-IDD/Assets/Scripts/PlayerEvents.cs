@@ -28,4 +28,8 @@ public class PlayerEvents : MonoBehaviour
     {
         player.animator.SetBool("isJumping", false);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        _onLand.Raise(this, null);
+    }
 }

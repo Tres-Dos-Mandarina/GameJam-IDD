@@ -20,6 +20,7 @@ public class FeedbacksManager : MonoBehaviour
     }
     public void PlayLandingFeedback(Component sender, object data)
     {
+        Debug.Log("Landed!");
         landingFeedback.PlayFeedbacks();
     }
 }
