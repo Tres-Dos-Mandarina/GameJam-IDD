@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
     private GameObject player;
-    
+    private GameObject[] lights;    
     [Header("Game Events")]
     public GameEvent OnGameStart;
     
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(this.gameObject);
+
+        lights = GameObject.FindGameObjectsWithTag("Light");
     }
     private void Start()
     {
@@ -63,5 +66,13 @@ public class GameManager : MonoBehaviour
         HandlePlayerRestart();
         yield return new WaitForSeconds(0.5f);
         GetComponent<Transition>().FadeIn();
+    }
+    public void HandleLightTurnOff(Component sender, object data)
+    {
+        Debug.Log("Turning Off Lights");
+        foreach(var light in lights)
+        {
+            light.gameObject.SetActive(false);
+        }
     }
 }

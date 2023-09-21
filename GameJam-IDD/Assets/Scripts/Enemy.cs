@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Game Events")] 
     public GameEvent onPlayerDeath;
+    public GameEvent onLightTurnOff;
 
     #region LifeCycle
 
@@ -53,6 +54,8 @@ public class Enemy : MonoBehaviour
     {
         if (Input.GetButtonDown("Interaction") && enemyState == EnemyState.Idle)
         {
+            Debug.Log("Interaction");
+            onLightTurnOff.Raise(this, null);
             SetEnemyState(EnemyState.Moving);
         }
     }
