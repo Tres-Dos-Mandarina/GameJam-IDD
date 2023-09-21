@@ -59,7 +59,6 @@ public class Player : MonoBehaviour
     GameEvent _onGoalReached;
     public GameEvent _onJump;
 
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -143,7 +142,14 @@ public class Player : MonoBehaviour
 
         dir.x = Input.GetAxis("Horizontal");
         dir.y = Input.GetAxis("Vertical");
-
+        if (!(_rb.velocity.magnitude < 0.1) && _isGrounded)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
         Animate(dir.x);
 
         float xRaw = Input.GetAxisRaw("Horizontal");
@@ -269,6 +275,8 @@ public class Player : MonoBehaviour
         _onRightWall = Physics2D.OverlapCircle(new Vector2(transform.position.x + .400f, transform.position.y), .15f, walls);
         _onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .300f, transform.position.y), .15f, walls);
 
+        
+
     }
 
     private void WallSlide(float speed)
@@ -328,6 +336,7 @@ public class Player : MonoBehaviour
         if (hit.collider != null)
         {
             c = Color.blue;
+            
             _isGrounded = true;
         }
         else

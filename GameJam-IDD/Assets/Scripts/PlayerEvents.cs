@@ -24,4 +24,8 @@ public class PlayerEvents : MonoBehaviour
     {
         OnPlayerNewLevel.Raise(this, transform.position);
     }
+    public void JumpIsDone()
+    {
+        player.animator.SetBool("isJumping", false);
+    }
 }
