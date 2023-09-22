@@ -2306,8 +2306,6 @@ GameObject:
   - component: {fileID: 1125662916}
   - component: {fileID: 1125662915}
   - component: {fileID: 1125662914}
-  - component: {fileID: 1125662913}
-  - component: {fileID: 1125662912}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Death
@@ -2330,126 +2328,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1359860334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!66 &1125662912
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125662910}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1125662914}
-    m_ColliderPaths:
-    - - X: -20000000
-        Y: -30000000
-      - X: -40000000
-        Y: -30000000
-      - X: -40000000
-        Y: -40000000
-      - X: -20000000
-        Y: -40000000
-    - - X: 30000000
-        Y: -30000000
-      - X: 10000000
-        Y: -30000000
-      - X: 10000000
-        Y: -40000000
-      - X: 30000000
-        Y: -40000000
-    - - X: 90000000
-        Y: -30000000
-      - X: 60000000
-        Y: -30000000
-      - X: 60000000
-        Y: -40000000
-      - X: 90000000
-        Y: -40000000
-    - - X: 140000000
-        Y: -30000000
-      - X: 120000000
-        Y: -30000000
-      - X: 120000000
-        Y: -40000000
-      - X: 140000000
-        Y: -40000000
-  m_CompositePaths:
-    m_Paths:
-    - - {x: 13.999971, y: -4}
-      - {x: 13.999971, y: -3}
-      - {x: 12, y: -3.0000293}
-      - {x: 12.00003, y: -4}
-    - - {x: 8.99997, y: -4}
-      - {x: 8.99997, y: -3}
-      - {x: 6, y: -3.0000293}
-      - {x: 6.000029, y: -4}
-    - - {x: 2.999971, y: -4}
-      - {x: 2.999971, y: -3}
-      - {x: 1, y: -3.0000293}
-      - {x: 1.0000293, y: -4}
-    - - {x: -2.0000293, y: -4}
-      - {x: -2.0000293, y: -3}
-      - {x: -4, y: -3.0000293}
-      - {x: -3.999971, y: -4}
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
-  m_CompositeGameObject: {fileID: 1125662910}
---- !u!50 &1125662913
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125662910}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!19719996 &1125662914
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -2479,9 +2357,9 @@ TilemapCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -4079,7 +3957,7 @@ PrefabInstance:
       objectReference: {fileID: 5146986213132493015}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.6814518
+      value: 4.240064
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4087,7 +3965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.6814518
+      value: 4.240064
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4119,6 +3997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onGoalReached: {fileID: 11400000, guid: a3f74e47a95a74c49b5af92019d271ca, type: 2}
+  popUpEnter: {fileID: 0}
+  popUpExit: {fileID: 0}
 --- !u!61 &8633427693399881266
 BoxCollider2D:
   m_ObjectHideFlags: 0
