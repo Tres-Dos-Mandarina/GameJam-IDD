@@ -64,6 +64,7 @@ public class PlayerEvents : MonoBehaviour
             c = Color.blue;
 
             playerIsFalling = false;
+            anim.SetBool("isJumping", false);
             anim.SetBool("isFalling", false);
         }
         else
@@ -71,6 +72,12 @@ public class PlayerEvents : MonoBehaviour
             c = Color.red;
             playerIsFalling = rb.velocity.y < 0;
             anim.SetBool("isFalling", rb.velocity.y < 0);
+            anim.SetBool("isJumping", rb.velocity.y > 0);
         }
+    }
+    public void SwitchToFalling()
+    {
+        anim.SetBool("isFalling", true);
+        anim.SetBool("isJumping", false);
     }
 }

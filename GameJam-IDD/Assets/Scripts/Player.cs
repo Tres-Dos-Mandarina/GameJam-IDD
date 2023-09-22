@@ -97,7 +97,8 @@ public class Player : MonoBehaviour
         StartCoroutine(DisableMovement(.1f));
     
         Vector2 wallDir = _onRightWall ? Vector2.left : Vector2.right;
-        Debug.Log(wallDir);
+        animator.SetBool("isJumping", true);
+        animator.SetBool("isSliding", false);
         BasicJump((Vector2.up / 2f + wallDir / 2f), true);
     
         _wallJumped = true;
@@ -140,7 +141,8 @@ public class Player : MonoBehaviour
 
         dir.x = Input.GetAxis("Horizontal");
         dir.y = Input.GetAxis("Vertical");
-        if (((_rb.velocity.x < -0.1) || (_rb.velocity.x > 0.1f)) && _isGrounded)
+
+        if((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && _isGrounded)
         {
             animator.SetBool("isMoving", true);
         }
@@ -148,6 +150,7 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isMoving", false);
         }
+        
         Animate(dir.x);
 
         float xRaw = Input.GetAxisRaw("Horizontal");
@@ -162,11 +165,15 @@ public class Player : MonoBehaviour
         if (_onWall && ((dir.x > 0.5f && _onRightWall) || (dir.x < -0.5f && _onLeftWall)) && _canMove)
         {
             _wallGrab = true;
+            animator.SetBool("isSliding", true);
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
             _wallSlide = false;
         }
         else if ((dir.x < 0.4 || dir.x > -0.4) || !_onWall)
         {
             _wallGrab = false;
+            animator.SetBool("isSliding", false);
             _wallSlide = false;
         }
 
@@ -290,7 +297,7 @@ public class Player : MonoBehaviour
         }
         float push = pushingWall ? 0 : _rb.velocity.x;
 
-        _rb.velocity = new Vector2(_rb.velocity.x, -speed);
+        _rb.velocity = new Vector2(push, -speed);
     }
     private void Animate(float _moveDirection)
     {
@@ -332,7 +339,7 @@ public class Player : MonoBehaviour
         if (hit.collider != null)
         {
             c = Color.blue;
-            
+            _wallJumped = false;
             _isGrounded = true;
         }
         else
