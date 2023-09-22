@@ -81,13 +81,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 44312773, guid: 570ff9583f6b035408ce91702d9c38dd, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -496017055, guid: 451bbccf5c3f2da44b5aab7a1c2073b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.62, y: 7.5}
+  m_Size: {x: 1.92, y: 1.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -125,18 +125,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.032575727, y: -0.19253445}
+  m_Offset: {x: 0.032575727, y: -0.17706656}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
-    newSize: {x: 6.62, y: 7.5}
+    oldSize: {x: 1.92, y: 1.92}
+    newSize: {x: 1.92, y: 1.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3392763, y: 1.2149315}
+  m_Size: {x: 0.3392763, y: 1.5706921}
   m_EdgeRadius: 0
 --- !u!50 &6070603957302228844
 Rigidbody2D:
@@ -195,7 +195,10 @@ MonoBehaviour:
   checkRadius: 0.2
   jumpDamping: 0.5
   _isGrounded: 0
+  _coyoteTime: 0.1
+  _jumpBufferTime: 0.1
   groundCheckDistance: 0.25
+  _canMove: 1
   _onJump: {fileID: 11400000, guid: 8a0a09871e131934494b3cb34de55a44, type: 2}
 --- !u!114 &7862007348849066975
 MonoBehaviour:
@@ -209,9 +212,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75df7b93fdbdbfa4cb8e1381c7269791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundObjects:
+    serializedVersion: 2
+    m_Bits: 64
   OnPlayerDeath: {fileID: 11400000, guid: 3a4d8bcb8838f944d973a085b2a3f5d0, type: 2}
   OnPlayerNewLevel: {fileID: 11400000, guid: 02840a9f045b0da448ea08f91bc9e8ba, type: 2}
   _onLand: {fileID: 11400000, guid: df33b51b3c3572e44bacd030c8b422cd, type: 2}
+  groundCheckDistance: 0.25
+  playerIsFalling: 0
 --- !u!114 &6163079583634728320
 MonoBehaviour:
   m_ObjectHideFlags: 0
