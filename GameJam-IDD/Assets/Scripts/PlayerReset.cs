@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerReset : MonoBehaviour
@@ -16,7 +14,7 @@ public class PlayerReset : MonoBehaviour
     {
         if (sender is GameManager)
         {
-            this.gameObject.transform.position = spawnPoint.position;
+            gameObject.transform.position = spawnPoint.position;
         }
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerEvents : MonoBehaviour
@@ -10,12 +8,12 @@ public class PlayerEvents : MonoBehaviour
     private BoxCollider2D _boxCollider2d;
     public LayerMask groundObjects;
     private Animator anim;
-    #region Player Events
+    
+    [Header("Player Events")]
     public GameEvent OnPlayerDeath;
-        public GameEvent OnPlayerNewLevel;
-    #endregion
-
+    public GameEvent OnPlayerNewLevel;
     public GameEvent _onLand;
+    
     [Header("Check Ground")]
     public float groundCheckDistance;
     public bool playerIsFalling = false;

@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public enum EnemyState
 {
@@ -47,11 +44,6 @@ public class Enemy : MonoBehaviour
         enemyStateSave = enemyState;
         enemyDirectionSave = enemyDirection;
         movementSpeedSave = movementSpeed;
-    }
-
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()

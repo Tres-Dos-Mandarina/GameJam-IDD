@@ -1,32 +1,27 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
     private GameObject player;
-    private GameObject[] lights;    
+    private GameObject[] lights;
+    
     [Header("Game Events")]
     public GameEvent OnGameStart;
     private bool nextLevel;
     public bool isAnyKeyPress = false;
-    private bool canAdvanceLevel = true;
-
-    #region Player Information
-    private Vector3 newPlayerStartPosition;
-    #endregion
     
+    private bool canAdvanceLevel = true;
+    private Vector3 newPlayerStartPosition;
+
     private void Awake()
     {
         if(instance == null)
             instance = this;
         else
-            Destroy(this.gameObject);
+            Destroy(gameObject);
 
         lights = GameObject.FindGameObjectsWithTag("Light");
     }
@@ -98,6 +93,7 @@ public class GameManager : MonoBehaviour
                 // Por ejemplo, cargar el siguiente nivel o realizar alguna acción relacionada con el avance de nivel
                 Debug.Log("Avanzando al siguiente nivel");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                
                 // Deshabilita la posibilidad de avanzar nuevamente hasta que se levante y vuelva a presionar una tecla
                 canAdvanceLevel = false;
             }
