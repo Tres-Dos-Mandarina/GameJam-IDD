@@ -2345,6 +2345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onLightTurnOff: {fileID: 11400000, guid: d2685df5effe0e64b927be8315fa6c03, type: 2}
+  onPopUpEnter: {fileID: 0}
+  onPopUpExit: {fileID: 0}
   switchSound: {fileID: 1901620113}
 --- !u!212 &995085784
 SpriteRenderer:
@@ -4809,7 +4811,7 @@ Transform:
   m_GameObject: {fileID: 5087892453582746984}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.390001, y: 0.32180715, z: 1.6666508}
+  m_LocalPosition: {x: 19.716, y: 0.8, z: 1.6666508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4856,7 +4858,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de73efd3311b04f42b67fe14d5628e52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4976,15 +4978,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onGoalReached: {fileID: 11400000, guid: a3f74e47a95a74c49b5af92019d271ca, type: 2}
---- !u!58 &8633427693399881266
-CircleCollider2D:
+--- !u!65 &8633427693399881266
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5087892453582746984}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -4993,24 +4993,12 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1640434, y: 3.131868, z: 0.2}
+  m_Center: {x: -0.33501244, y: 0.018612146, z: 0}
 --- !u!114 &9147259546645571063 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5446950390228468078, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
