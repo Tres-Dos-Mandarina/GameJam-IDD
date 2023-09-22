@@ -5512,7 +5512,7 @@ GameObject:
   - component: {fileID: 1294938936}
   - component: {fileID: 1294938935}
   - component: {fileID: 1294938934}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Estanteria1
   m_TagString: Ground
   m_Icon: {fileID: 0}
