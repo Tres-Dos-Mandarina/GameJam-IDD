@@ -7,8 +7,8 @@ public class SaveData : MonoBehaviour
     public GameConfig config;
     public void SaveToJson(bool _speedrun, bool _audio, bool _kenkri)
     {
-        config.speedRun = _speedrun;
-        config.audioOn = _audio;
+        config.speedrun = _speedrun;
+        config.audio = _audio;
         config.kenkri = _kenkri;
         string configSettings = JsonUtility.ToJson(config);
         string filePath = Application.persistentDataPath + "/oriol_gilipollas.json";
@@ -27,7 +27,7 @@ public class SaveData : MonoBehaviour
 [System.Serializable]
 public class GameConfig
 {
-    public bool speedRun = false;
-    public bool audioOn = false;
+    public bool speedrun = false;
+    public bool audio = false;
     public bool kenkri = false;
 }

@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     private static MainMenuManager Instance { get; set; }
+
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject settingsMenu;
+
     
     private void Awake()
     {
@@ -21,6 +25,8 @@ public class MainMenuManager : MonoBehaviour
     public void OpenSettings()
     {
         Debug.Log("Abrir apartado de Settings");
+        settingsMenu.SetActive(true);
+        mainMenu.SetActive(false);
     }
 
     public void ExitGame()
