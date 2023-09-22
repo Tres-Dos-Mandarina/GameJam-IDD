@@ -3518,6 +3518,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6713457815769940675, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
+      propertyPath: AnimateCurve.m_Curve.Array.data[1].time
+      value: 0.3368067
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713457815769940675, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
+      propertyPath: AnimateCurve.m_Curve.Array.data[1].value
+      value: 0.34572738
+      objectReference: {fileID: 0}
     - target: {fileID: 7862007348849066975, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
       propertyPath: m_Enabled
       value: 1

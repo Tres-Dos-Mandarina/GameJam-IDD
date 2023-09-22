@@ -46,12 +46,10 @@ public class PlayerEvents : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if (collision.relativeVelocity.y > feedbacksManager.minVelocityToPlayFeedback)
         {
             _onLand.Raise(this, null);
         }
-            
     }
     // Here it goes the code to fall and jump
 
