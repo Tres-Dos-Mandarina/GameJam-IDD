@@ -98,8 +98,8 @@ public class PlayerEvents : MonoBehaviour
         {
             if(enemy != null)
             {
-                enemy.enemyState = EnemyState.Moving;
-                enemy.enemyDirection = EnemyDirection.Left;
+                enemy.SetEnemyState(EnemyState.Moving);
+                enemy.SetEnemyDirection(EnemyDirection.Left);
                 enemy.transform.position = sendEnemyHere;
             }
         }

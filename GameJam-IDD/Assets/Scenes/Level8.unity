@@ -10010,6 +10010,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
+--- !u!114 &3848023046206153883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4772789494205098574, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
+  m_PrefabInstance: {fileID: 3848023046206153882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3876213510859848798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10182,7 +10193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You need to switch the lights
+  m_text: You need to switch the lights off
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10698,6 +10709,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9147259546645571063}
     - target: {fileID: 8363568994913302509, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
+      propertyPath: deathFeedback
+      value: 
+      objectReference: {fileID: 3848023046206153883}
+    - target: {fileID: 8363568994913302509, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
       propertyPath: landingFeedback
       value: 
       objectReference: {fileID: 7285414010641220165}
@@ -10848,8 +10863,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -4.91295, y: 11.28235, z: 0}
-    m_Extent: {x: 7.12425, y: 10.84315, z: 0}
+    m_Center: {x: -4.91855, y: 11.2872, z: 0}
+    m_Extent: {x: 7.12085, y: 10.8529005, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123

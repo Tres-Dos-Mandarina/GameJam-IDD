@@ -10,6 +10,7 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        if (!collider.CompareTag("Player")) return;
         if(isLightOff)
         {
             Debug.Log("Sending Goal Event");
@@ -23,11 +24,9 @@ public class Goal : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            isEventCalled = false;
-            popUpExit.Raise(this, 1);
-        }
+        if (!collision.CompareTag("Player")) return;
+        isEventCalled = false;
+        popUpExit.Raise(this, 1);
     }
     public void IsLightOff(Component sender, object data)
     {
