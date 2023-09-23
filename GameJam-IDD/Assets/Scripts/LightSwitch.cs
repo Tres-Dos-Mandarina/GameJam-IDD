@@ -6,14 +6,20 @@ public class LightSwitch : MonoBehaviour
     public GameEvent onPopUpEnter;
     public GameEvent onPopUpExit;
     public AudioSource switchSound;
+    private Animator anim;
     bool isEventCalled = false;
     bool canInteract = false;
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
     private void Update()
     {
         if(canInteract)
         {
             if (Input.GetButtonDown("Interaction"))
             {
+                anim.SetBool("IsPressed",true);
                 switchSound.Play();
                 onLightTurnOff.Raise(this, EnemyState.Moving);
             }
