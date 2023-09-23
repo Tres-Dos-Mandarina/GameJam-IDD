@@ -18,6 +18,9 @@ public class PlayerEvents : MonoBehaviour
     [Header("Check Ground")]
     public float groundCheckDistance;
     public bool playerIsFalling = false;
+
+    public AudioClip[] stepAudios;
+
     private void Awake()
     {
         player = GetComponent<Player>();
@@ -64,6 +67,7 @@ public class PlayerEvents : MonoBehaviour
             playerIsFalling = false;
             anim.SetBool("isJumping", false);
             anim.SetBool("isFalling", false);
+            //StepSound();
         }
         else
         {
@@ -80,6 +84,8 @@ public class PlayerEvents : MonoBehaviour
     }
     public void StepSound()
     {
-        audioSource.Play();
+        float rndAudio = Random.Range(0, stepAudios.Length);
+        audioSource.clip = stepAudios[(int)rndAudio];
+        audioSource.PlayOneShot(audioSource.clip);
     }
 }

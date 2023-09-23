@@ -12,7 +12,6 @@ public class LightSwitch : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             if (!isEventCalled)
             {
                 isEventCalled = true;
@@ -21,7 +20,6 @@ public class LightSwitch : MonoBehaviour
 
             if (Input.GetButtonDown("Interaction"))
             {
-                Debug.Log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
                 switchSound.Play();
                 onLightTurnOff.Raise(this, EnemyState.Moving);
             }
