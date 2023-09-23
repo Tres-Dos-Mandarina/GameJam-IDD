@@ -9,26 +9,31 @@ public class LightSwitch : MonoBehaviour
     private Animator anim;
     bool isEventCalled = false;
     bool canInteract = false;
+    bool canPopap = true;
+
     private void Start()
     {
+        canPopap = true;
         anim = GetComponent<Animator>();
     }
     private void Update()
     {
-        if(canInteract)
+        if(canInteract && canPopap == true)
         {
             if (Input.GetButtonDown("Interaction"))
             {
+                canPopap = false;
                 anim.SetBool("IsPressed",true);
                 switchSound.Play();
                 onLightTurnOff.Raise(this, EnemyState.Moving);
+                onPopUpExit.Raise(this, 0);
             }
         }
     }
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && canPopap == true)
         {
             if (!isEventCalled)
             {
