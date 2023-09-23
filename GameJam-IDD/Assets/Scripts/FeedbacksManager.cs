@@ -29,7 +29,6 @@ public class FeedbacksManager : MonoBehaviour
     }
     public void PlayDeathFeedback(Component sender, object data)
     {
-        Debug.Log("dsada");
         deathFeedback.PlayFeedbacks();
     }
 }
