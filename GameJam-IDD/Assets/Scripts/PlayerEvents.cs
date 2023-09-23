@@ -86,6 +86,6 @@ public class PlayerEvents : MonoBehaviour
     {
         float rndAudio = Random.Range(0, stepAudios.Length);
         audioSource.clip = stepAudios[(int)rndAudio];
-        audioSource.Play();
+        audioSource.PlayOneShot(audioSource.clip);
     }
 }
