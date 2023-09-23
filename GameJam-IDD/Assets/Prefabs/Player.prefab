@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8007202130221784046}
   - component: {fileID: 3508443470619669388}
   - component: {fileID: 5164486564870932032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 4758568929163930074}
   - component: {fileID: 5799530090111887071}
   - component: {fileID: 2978067377483403128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LandingFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 8367287117155094737}
   - component: {fileID: 5446950390228468078}
   - component: {fileID: 6713457815769940675}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JumpFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 8260690136608421817}
   - component: {fileID: 4772789494205098574}
   - component: {fileID: 6965690726474989095}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeadFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4804279430550676170}
   - component: {fileID: 7363045842975243681}
   - component: {fileID: 5622841685786479722}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemySpikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9113129814449380479}
   - component: {fileID: 2976430217701789939}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
