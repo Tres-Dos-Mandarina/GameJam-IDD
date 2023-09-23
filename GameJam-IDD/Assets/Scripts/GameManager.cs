@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
 
     public void HandlePlayerDeath(Component sender, object data)
     {
-        Debug.Log("Player Died");
         HandlePlayerRestart();
     }
     
