@@ -58,9 +58,17 @@ public class GameManager : MonoBehaviour
 
     public void HandlePlayerDeath(Component sender, object data)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        StartCoroutine(LoadFastLevel());
 
         //HandlePlayerRestart();
+    }
+    public IEnumerator LoadFastLevel()
+    {
+        player.SetActive(false);
+        yield return new WaitForSeconds(.25f);
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
     public void HandlePlayerRestart()
@@ -101,7 +109,6 @@ public class GameManager : MonoBehaviour
     
     IEnumerator HandleLoadScene()
     {
-        // TODO Stop Player movement
         GetComponent<Transition>().FadeOut();
         yield return new WaitForSeconds(2);
         while (!nextLevel)
@@ -110,28 +117,21 @@ public class GameManager : MonoBehaviour
 
             if (Input.anyKey)
             {
-                // Si se está presionando una tecla, marca que hay una tecla presionada
                 isAnyKeyPress = true;
             }
             else
             {
-                // Si no se está presionando ninguna tecla, se permite avanzar de nivel si había una tecla presionada previamente
                 if (isAnyKeyPress)
                 {
                     canAdvanceLevel = true;
-                    isAnyKeyPress = false; // Reiniciar el estado de tecla presionada
+                    isAnyKeyPress = false;
                 }
             }
 
-            // Verificar si se debe avanzar de nivel
-            if (canAdvanceLevel && Input.anyKeyDown) // Detecta cualquier tecla presionada, incluyendo las que ya estén siendo presionadas
+            if (canAdvanceLevel && Input.anyKeyDown)
             {
-                // Aquí puedes poner el código para avanzar de nivel
-                // Por ejemplo, cargar el siguiente nivel o realizar alguna acción relacionada con el avance de nivel
                 Debug.Log("Avanzando al siguiente nivel");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                
-                // Deshabilita la posibilidad de avanzar nuevamente hasta que se levante y vuelva a presionar una tecla
                 canAdvanceLevel = false;
             }
         }        

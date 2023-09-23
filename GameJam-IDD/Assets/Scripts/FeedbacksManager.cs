@@ -9,6 +9,7 @@ public class FeedbacksManager : MonoBehaviour
     private Rigidbody2D rb;
     public MMFeedbacks jumpFeedback;
     public MMFeedbacks landingFeedback;
+    public MMFeedbacks deathFeedback;
     
     private void Awake()
     {
@@ -26,5 +27,9 @@ public class FeedbacksManager : MonoBehaviour
     {
         landingFeedback.PlayFeedbacks();
     }
-    
+    public void PlayDeathFeedback(Component sender, object data)
+    {
+        Debug.Log("dsada");
+        deathFeedback.PlayFeedbacks();
+    }
 }

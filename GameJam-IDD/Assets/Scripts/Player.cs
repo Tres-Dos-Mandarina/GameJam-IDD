@@ -276,12 +276,9 @@ public class Player : MonoBehaviour
             airSpeed = _startAirMoveSpeed;
         }
 
-        _onWall = Physics2D.OverlapCircle(new Vector2(transform.position.x+ .400f, transform.position.y), .15f, walls)
-            || Physics2D.OverlapCircle(new Vector2(transform.position.x - .300f, transform.position.y), .15f, walls);
-        _onRightWall = Physics2D.OverlapCircle(new Vector2(transform.position.x + .400f, transform.position.y), .15f, walls);
-        _onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .300f, transform.position.y), .15f, walls);
-
         
+
+        CheckWalls();
 
     }
     private void WallSlide(float speed)
@@ -346,5 +343,18 @@ public class Player : MonoBehaviour
             c = Color.red;
             _isGrounded = false;
         }
+    }
+    public void CheckWalls()
+    {
+        Vector3 newSize = new Vector3(_boxCollider2d.bounds.size.x, _boxCollider2d.bounds.size.y * .25f, _boxCollider2d.bounds.size.z);
+        _onWall = Physics2D.BoxCast(_boxCollider2d.bounds.center, newSize, 0f, Vector3.right, .15f, walls)
+            || Physics2D.BoxCast(_boxCollider2d.bounds.center, newSize, 0f, Vector3.left, .15f, walls);
+        _onRightWall = Physics2D.BoxCast(_boxCollider2d.bounds.center, newSize, 0f, Vector3.right, .15f, walls);
+        _onLeftWall = Physics2D.BoxCast(_boxCollider2d.bounds.center, newSize, 0f, Vector3.left, .15f, walls);
+
+        //_onWall = Physics2D.OverlapCircle(new Vector2(transform.position.x + .400f, transform.position.y), .25f, walls)
+        //    || Physics2D.OverlapCircle(new Vector2(transform.position.x - .300f, transform.position.y), .25f, walls);
+        //_onRightWall = Physics2D.OverlapCircle(new Vector2(transform.position.x + .400f, transform.position.y), .25f, walls);
+        //_onLeftWall = Physics2D.OverlapCircle(new Vector2(transform.position.x - .300f, transform.position.y), .25f, walls);
     }
 }
