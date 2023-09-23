@@ -7617,6 +7617,26 @@ PrefabInstance:
       propertyPath: groundObjects.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 7862007348849066975, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
+      propertyPath: stepAudios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862007348849066975, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
+      propertyPath: stepAudios.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6a90154587a99e24dbd76dd8923ec0c4, type: 3}
+    - target: {fileID: 7862007348849066975, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
+      propertyPath: stepAudios.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ae0eb81d699180a46b4c26e131807696, type: 3}
+    - target: {fileID: 7862007348849066975, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
+      propertyPath: stepAudios.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ddbab54f6cbcc94a965eeb64cb35c53, type: 3}
+    - target: {fileID: 7862007348849066975, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
+      propertyPath: stepAudios.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ddbab54f6cbcc94a965eeb64cb35c53, type: 3}
     - target: {fileID: 8217706072723031117, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.97
