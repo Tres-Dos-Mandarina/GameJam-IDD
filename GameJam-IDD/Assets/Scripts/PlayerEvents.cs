@@ -8,6 +8,7 @@ public class PlayerEvents : MonoBehaviour
     private BoxCollider2D _boxCollider2d;
     public LayerMask groundObjects;
     private Animator anim;
+    private AudioSource audioSource;
     
     [Header("Player Events")]
     public GameEvent OnPlayerDeath;
@@ -24,6 +25,7 @@ public class PlayerEvents : MonoBehaviour
         _boxCollider2d = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         feedbacksManager = GameObject.Find("FeedbacksManager").GetComponent<FeedbacksManager>();
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
     private void Start()
     {
@@ -75,5 +77,9 @@ public class PlayerEvents : MonoBehaviour
     {
         anim.SetBool("isFalling", true);
         anim.SetBool("isJumping", false);
+    }
+    public void StepSound()
+    {
+        audioSource.Play();
     }
 }
