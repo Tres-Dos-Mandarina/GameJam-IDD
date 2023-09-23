@@ -58,7 +58,9 @@ public class GameManager : MonoBehaviour
 
     public void HandlePlayerDeath(Component sender, object data)
     {
-        HandlePlayerRestart();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        //HandlePlayerRestart();
     }
     
     public void HandlePlayerRestart()
