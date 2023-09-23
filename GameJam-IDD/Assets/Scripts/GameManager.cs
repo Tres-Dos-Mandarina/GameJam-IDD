@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
     private GameObject player;
-    private GameObject[] lights;
+    public GameObject[] lights;
 
     // Menus
     private GameObject menuCanvas;
@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        lights = GameObject.FindGameObjectsWithTag("Light");
         menuCanvas = GameObject.Find("MenuCanvas");
         menuCanvas.SetActive(false);
         isMenuOn = false;
@@ -128,11 +127,17 @@ public class GameManager : MonoBehaviour
         }        
     }
     public void HandleLightTurnOff(Component sender, object data)
-    {
-        Debug.Log("Turning Off Lights");
-        foreach(var light in lights)
+    { 
+        foreach(var ligh in lights)
         {
-            light.gameObject.SetActive(false);
+            if(ligh.tag != "WorldLight")
+            {
+                ligh.gameObject.SetActive(false);
+            }
+            else
+            {
+                ligh.gameObject.SetActive(true);
+            }
         }
     }
 }
