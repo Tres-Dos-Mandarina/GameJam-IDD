@@ -123,6 +123,16 @@ public class Player : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(dir.x));
 
+
+        if (((Mathf.Abs(dir.x) > 0)) && _isGrounded)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+
         if (!_wallJumped)
         {
             _rb.velocity = new Vector2(dir.x * moveSpeed, _rb.velocity.y);
@@ -139,15 +149,6 @@ public class Player : MonoBehaviour
         dir.x = Input.GetAxis("Horizontal");
         dir.y = Input.GetAxis("Vertical");
 
-        if((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && _isGrounded)
-        {
-            animator.SetBool("isMoving", true);
-        }
-        else
-        {
-            animator.SetBool("isMoving", false);
-        }
-        
         Animate(dir.x);
 
         float xRaw = Input.GetAxisRaw("Horizontal");
@@ -157,6 +158,7 @@ public class Player : MonoBehaviour
             dir /= airSpeed;
 
         Walk(dir);
+
         lastSpeed = Mathf.Abs(dir.x);
         
         if (_onWall && ((dir.x > 0.5f && _onRightWall) || (dir.x < -0.5f && _onLeftWall)) && _canMove)
