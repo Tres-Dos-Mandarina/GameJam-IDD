@@ -30,7 +30,8 @@ public class PlayerEvents : MonoBehaviour
         anim = GetComponent<Animator>();
         feedbacksManager = GameObject.Find("FeedbacksManager").GetComponent<FeedbacksManager>();
         audioSource = gameObject.GetComponent<AudioSource>();
-        sendEnemyHere = GameObject.Find("SendEnemyHere").GetComponent<Transform>().position;
+        if(GameObject.Find("SendEnemyHere"))
+            sendEnemyHere = GameObject.Find("SendEnemyHere").GetComponent<Transform>().position;
         enemy = GameObject.FindObjectOfType<Enemy>();
     }
     private void Start()
