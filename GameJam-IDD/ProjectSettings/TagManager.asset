@@ -9,6 +9,7 @@ TagManager:
   - SpawnPoint
   - Goal
   - Light
+  - SwitchEnemyTrigger
   layers:
   - Default
   - TransparentFX

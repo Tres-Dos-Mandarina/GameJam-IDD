@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     private GameObject player;
     private GameObject[] lights;
+
+    // Menus
+    private GameObject menuCanvas;
+    private bool isMenuOn = false;
     
     [Header("Game Events")]
     public GameEvent OnGameStart;
@@ -18,12 +22,18 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        // Eat cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         if(instance == null)
             instance = this;
         else
             Destroy(gameObject);
 
         lights = GameObject.FindGameObjectsWithTag("Light");
+        menuCanvas = GameObject.Find("MenuCanvas");
+        menuCanvas.SetActive(false);
+        isMenuOn = false;
     }
     private void Start()
     {
@@ -55,12 +65,31 @@ public class GameManager : MonoBehaviour
         
         HandleNextLevel();
     } 
-
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        {
+            if(isMenuOn)
+            {
+                menuCanvas.SetActive(false);
+                isMenuOn = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else
+            {
+                menuCanvas.SetActive(true);
+                isMenuOn = true;
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+            }
+        }
+    }
     public void HandleNextLevel()
     {
         StartCoroutine(HandleLoadScene());
     }
-
+    
     IEnumerator HandleLoadScene()
     {
         // TODO Stop Player movement

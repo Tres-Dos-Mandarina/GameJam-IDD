@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class PlayerEvents : MonoBehaviour
 {
     private Player player;
@@ -9,6 +8,8 @@ public class PlayerEvents : MonoBehaviour
     public LayerMask groundObjects;
     private Animator anim;
     private AudioSource audioSource;
+    private Vector3 sendEnemyHere;
+    private Enemy enemy;
     
     [Header("Player Events")]
     public GameEvent OnPlayerDeath;
@@ -18,7 +19,7 @@ public class PlayerEvents : MonoBehaviour
     [Header("Check Ground")]
     public float groundCheckDistance;
     public bool playerIsFalling = false;
-
+    public AudioClip jumpAudio;
     public AudioClip[] stepAudios;
 
     private void Awake()
@@ -29,6 +30,8 @@ public class PlayerEvents : MonoBehaviour
         anim = GetComponent<Animator>();
         feedbacksManager = GameObject.Find("FeedbacksManager").GetComponent<FeedbacksManager>();
         audioSource = gameObject.GetComponent<AudioSource>();
+        sendEnemyHere = GameObject.Find("SendEnemyHere").GetComponent<Transform>().position;
+        enemy = GameObject.FindObjectOfType<Enemy>();
     }
     private void Start()
     {
@@ -86,6 +89,23 @@ public class PlayerEvents : MonoBehaviour
     {
         float rndAudio = Random.Range(0, stepAudios.Length);
         audioSource.clip = stepAudios[(int)rndAudio];
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("SwitchEnemyTrigger"))
+        {
+            if(enemy != null)
+            {
+                enemy.enemyState = EnemyState.Moving;
+                enemy.enemyDirection = EnemyDirection.Left;
+                enemy.transform.position = sendEnemyHere;
+            }
+        }
+    }
+    public void JumpSound()
+    {
+        audioSource.clip = jumpAudio;
         audioSource.PlayOneShot(audioSource.clip);
     }
 }
