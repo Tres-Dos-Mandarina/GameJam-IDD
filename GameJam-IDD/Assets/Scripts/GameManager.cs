@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     // Menus
     private GameObject menuCanvas;
     private bool isMenuOn = false;
+
+    // Lights
+    private GameObject roomLight;
+    private GameObject door;
     
     [Header("Game Events")]
     public GameEvent OnGameStart;
@@ -22,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        roomLight = GameObject.Find("DoorLight");
+        door = GameObject.Find("Door");
         // Eat cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -37,6 +43,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
+        roomLight.SetActive(false);
+        door.SetActive(true);
         GameStart();
     }
     public void ChangeLevel()
@@ -133,6 +141,8 @@ public class GameManager : MonoBehaviour
             if(ligh.tag != "WorldLight")
             {
                 ligh.gameObject.SetActive(false);
+                roomLight.SetActive(true);
+                door.SetActive(false);
             }
             else
             {

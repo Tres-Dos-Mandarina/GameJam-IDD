@@ -11,6 +11,7 @@ TagManager:
   - Light
   - SwitchEnemyTrigger
   - WorldLight
+  - NoOffLight
   layers:
   - Default
   - TransparentFX
@@ -47,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: LightNoEffect
+    uniqueID: 1820895151
     locked: 0

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6163079583634728320}
   - component: {fileID: 8007202130221784046}
   - component: {fileID: 3508443470619669388}
-  - component: {fileID: 615495548444117850}
+  - component: {fileID: 5164486564870932032}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -163,7 +163,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &8393054108302032404
@@ -285,7 +285,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!82 &615495548444117850
+--- !u!82 &5164486564870932032
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,8 +295,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: f1996a2762ab4a94ebd3a3715a2541b0, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -760,8 +760,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.25764003
-      value: 0.49523118
+      time: 0.3368067
+      value: 0.34572738
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -7,7 +7,8 @@ public class Transition : MonoBehaviour
     public void FadeOut()
     {
         Debug.Log("FadeOut");
-        animator.SetBool("FadeIn", false);
+        //animator.SetBool("FadeIn", false);
+        animator.Play("FastFadeOut");
     }
 
     public void FadeIn()
