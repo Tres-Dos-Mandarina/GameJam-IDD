@@ -2095,6 +2095,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3902446703464684689, guid: d64e6fabb9608bc4b964a19ef4ceb7c2, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6780043
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902446703464684689, guid: d64e6fabb9608bc4b964a19ef4ceb7c2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.14192122
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653929862858222308, guid: d64e6fabb9608bc4b964a19ef4ceb7c2, type: 3}
+      propertyPath: m_Size.y
+      value: 2.677131
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653929862858222308, guid: d64e6fabb9608bc4b964a19ef4ceb7c2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.14235795
+      objectReference: {fileID: 0}
     - target: {fileID: 7468796211762904566, guid: d64e6fabb9608bc4b964a19ef4ceb7c2, type: 3}
       propertyPath: m_Name
       value: Bookshelf
@@ -5809,8 +5825,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -4.0892, y: 15.8082, z: 0}
-    m_Extent: {x: 6.2707996, y: 15.5717, z: 0}
+    m_Center: {x: -4.09345, y: 15.80945, z: 0}
+    m_Extent: {x: 6.26535, y: 15.57605, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
