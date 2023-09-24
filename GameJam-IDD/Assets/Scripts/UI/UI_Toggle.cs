@@ -23,6 +23,7 @@ public class UI_Toggle : MonoBehaviour
     [SerializeField] private GameObject _darken;
     [SerializeField]private Color _color;
     private SaveData _saveData;
+    private GameManager _gameManager;
 
     private Toggle _toggle;
     private Image _background;
@@ -33,6 +34,7 @@ public class UI_Toggle : MonoBehaviour
     { 
         _toggle = GetComponent<Toggle>();
         _saveData = FindObjectOfType<SaveData>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
     private void Start()
     {
@@ -76,6 +78,14 @@ public class UI_Toggle : MonoBehaviour
                     _color.a -= .2f;
                 else
                     _color.a += .2f;
+                if(_saveData.config.audio)
+                {
+                    _gameManager.TurnOnAllAudios(_gameManager.GetAllAudioSource());
+                }
+                else
+                {
+                    _gameManager.MuteAllAudioSources(_gameManager.GetAllAudioSource());
+                }
 
                 break;
                 default: break;

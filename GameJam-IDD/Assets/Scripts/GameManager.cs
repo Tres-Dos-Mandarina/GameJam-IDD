@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,6 +51,27 @@ public class GameManager : MonoBehaviour
 
         mainMenu = GameObject.Find("Main Menu");
     }
+    public List<AudioSource> GetAllAudioSource()
+    {
+        List<AudioSource> allAudios = new List<AudioSource>();
+        
+        allAudios = FindObjectsOfType<AudioSource>().ToList();
+        return allAudios;
+    }
+    public void MuteAllAudioSources(List<AudioSource> audios)
+    {
+        foreach (AudioSource audio in audios)
+        {
+            audio.enabled = false;
+        }
+    }
+    public void TurnOnAllAudios(List<AudioSource> audios)
+    {
+        foreach (AudioSource audio in audios)
+        {
+            audio.enabled = true;
+        }
+    }
     private void Start()
     {
         player = GameObject.Find("Player");
@@ -63,8 +85,8 @@ public class GameManager : MonoBehaviour
         {
             saveData.LoadFromJson();
         }
-        
-        if(roomLight != null)
+        ;
+        if (roomLight != null)
             roomLight.SetActive(false);
         
         if(door != null)
@@ -72,6 +94,15 @@ public class GameManager : MonoBehaviour
         
         timer.gameObject.SetActive(saveData.config.speedrun);
         GameStart();
+
+        if(saveData.config.audio)
+        {
+            TurnOnAllAudios(GetAllAudioSource());
+        }
+        else
+        {
+            MuteAllAudioSources(GetAllAudioSource());
+        }
     }
     public void ChangeLevel()
     {
