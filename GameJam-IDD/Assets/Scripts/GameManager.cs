@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
             door.SetActive(true);
         
         timer.gameObject.SetActive(saveData.config.speedrun);
+        timer.ResumeTimer();
         GameStart();
 
         if(saveData.config.audio)
@@ -142,7 +143,7 @@ public class GameManager : MonoBehaviour
     public void HandlePlayerGoal(Component sender, object data)
     {
         player.GetComponent<Player>().DisableMovement();
-        
+        timer.StopTimer();
         HandleNextLevel();
     } 
 
@@ -248,7 +249,8 @@ public class GameManager : MonoBehaviour
         }        
     }
     public void HandleLightTurnOff(Component sender, object data)
-    { 
+    {
+        timer.StartTimer();
         foreach(var ligh in lights)
         {
             if(ligh.tag != "WorldLight")

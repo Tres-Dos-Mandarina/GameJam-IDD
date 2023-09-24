@@ -40,12 +40,6 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void GameStart(Component sender, object data)
-    {
-        startTime = saveData.config.time;
-        StartTimer();
-    }
-
     public void StartTimer()
     {
         if (!isTimerRunning)
