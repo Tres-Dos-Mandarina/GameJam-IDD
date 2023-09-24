@@ -11976,8 +11976,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -6.692, y: 10.54455, z: 0}
-    m_Extent: {x: 8.5939, y: 10.855249, z: 0}
+    m_Center: {x: -6.68655, y: 10.54955, z: 0}
+    m_Extent: {x: 8.59655, y: 10.85435, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
@@ -12868,6 +12868,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_BiasX
+      value: -0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_BiasY
+      value: -0.331
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_ScreenX
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_ScreenY
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_DeadZoneHeight
+      value: 0.534
+      objectReference: {fileID: 0}
     - target: {fileID: 5753172451320759828, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: orthographic size
       value: 6.2951727
@@ -12878,19 +12898,19 @@ PrefabInstance:
       objectReference: {fileID: 5146986213132493015}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.72145176
+      value: -1.8525743
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.744
+      value: -0.8554487
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.72145176
+      value: -1.8525743
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.744
+      value: -0.8554487
       objectReference: {fileID: 0}
     - target: {fileID: 8366686136958361691, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_Enabled

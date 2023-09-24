@@ -34066,6 +34066,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_BiasY
+      value: -0.187
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_ScreenY
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_DeadZoneHeight
+      value: 0.504
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
+      propertyPath: m_SoftZoneHeight
+      value: 0.955
+      objectReference: {fileID: 0}
     - target: {fileID: 5753172451320759828, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: orthographic size
       value: 10
@@ -34080,19 +34096,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.959074
+      value: 28.96907
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.36
+      value: 22.36
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.959074
+      value: 28.96907
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.36
+      value: 22.36
       objectReference: {fileID: 0}
     - target: {fileID: 8366686136958361691, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_Enabled
@@ -34175,8 +34191,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: 1.9501, y: 6.20775, z: 0}
-    m_Extent: {x: 5.1513, y: 5.83295, z: 0}
+    m_Center: {x: 1.94845, y: 6.21475, z: 0}
+    m_Extent: {x: 5.13795, y: 5.8256497, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
