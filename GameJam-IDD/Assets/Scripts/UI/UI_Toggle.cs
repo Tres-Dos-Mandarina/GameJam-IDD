@@ -27,10 +27,27 @@ public class UI_Toggle : MonoBehaviour
     private Toggle _toggle;
     private Image _background;
 
+    public bool isSpeedrun;
+
     private void Awake()
     { 
         _toggle = GetComponent<Toggle>();
-        _saveData = GameObject.Find("Data Saver").GetComponent<SaveData>();
+        _saveData = FindObjectOfType<SaveData>();
+    }
+    private void Start()
+    {
+        if (isSpeedrun)
+        {
+            _toggle.isOn = _saveData.config.speedrun;
+            OnSwitch(_saveData.config.speedrun);
+        }
+            
+        else
+        {
+            _toggle.isOn = _saveData.config.audio;
+            OnSwitch(_saveData.config.audio);
+        }
+        _darken.GetComponent<Image>().color = new Color(0f, 0f, 0f,.666666667f);
     }
 
     public void OnSwitch(bool isOn)

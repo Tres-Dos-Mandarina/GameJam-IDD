@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     
     private bool canAdvanceLevel = true;
     private Vector3 newPlayerStartPosition;
+    private SaveData saveData;
 
     private void Awake()
     {
@@ -36,6 +37,15 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
 
+        saveData = FindObjectOfType<SaveData>();
+        if(!saveData.DoesFileExist())
+        {
+            saveData.SaveToJson(false, true, false);
+        }
+        else
+        {
+            saveData.LoadFromJson();
+        }
         menuCanvas = GameObject.Find("MenuCanvas");
         menuCanvas.SetActive(false);
         isMenuOn = false;
@@ -82,16 +92,26 @@ public class GameManager : MonoBehaviour
         
         HandleNextLevel();
     } 
+    public void BackToGameFromSettings()
+    {
+        menuCanvas.SetActive(false);
+        saveData.SaveToJson(saveData.config.speedrun, saveData.config.audio, saveData.config.kenkri);
+        isMenuOn = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    public void GoToMainMenu()
+    {
+        BackToGameFromSettings();
+        SceneManager.LoadScene("_MainMenu");
+    }
     public void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             if(isMenuOn)
             {
-                menuCanvas.SetActive(false);
-                isMenuOn = false;
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                BackToGameFromSettings();
             }
             else
             {

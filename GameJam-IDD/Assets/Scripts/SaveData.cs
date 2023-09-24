@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class SaveData : MonoBehaviour
@@ -12,7 +13,6 @@ public class SaveData : MonoBehaviour
         config.kenkri = _kenkri;
         string configSettings = JsonUtility.ToJson(config);
         string filePath = Application.persistentDataPath + "/oriol_gilipollas.json";
-        Debug.Log(filePath);
         System.IO.File.WriteAllText(filePath, configSettings);
     }
     public void LoadFromJson()
@@ -21,6 +21,10 @@ public class SaveData : MonoBehaviour
         string settings = System.IO.File.ReadAllText(filePath);
 
         config = JsonUtility.FromJson<GameConfig>(settings);
+    }
+    public bool DoesFileExist()
+    {
+        return File.Exists(Application.persistentDataPath + "/oriol_gilipollas.json");
     }
 }
 
