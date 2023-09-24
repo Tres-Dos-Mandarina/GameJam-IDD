@@ -10809,6 +10809,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 299046467427755555, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6770761347279125815}
+    - target: {fileID: 299046467427755555, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6770761347279125815}
     - target: {fileID: 1678083778269969485, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10816,6 +10824,22 @@ PrefabInstance:
     - target: {fileID: 1678083778269969485, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BackToGameFromSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991967469410542197, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6770761347279125815}
+    - target: {fileID: 1991967469410542197, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6770761347279125815}
+    - target: {fileID: 1991967469410542197, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayMouseHoverSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991967469410542197, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayMousePressedSound
       objectReference: {fileID: 0}
     - target: {fileID: 2476653416565221090, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -10921,10 +10945,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BackToGameFromSettings
       objectReference: {fileID: 0}
+    - target: {fileID: 7729600364867000487, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778204961575058543, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6770761347279125815}
+    - target: {fileID: 7778204961575058543, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6770761347279125815}
     - target: {fileID: 8149187068155205147, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
       propertyPath: m_Name
       value: MenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8330767296420175701, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6770761347279125815}
+    - target: {fileID: 8330767296420175701, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6770761347279125815}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11932,8 +11976,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -6.6885, y: 10.54, z: 0}
-    m_Extent: {x: 8.5975, y: 10.8501005, z: 0}
+    m_Center: {x: -6.70015, y: 10.5482, z: 0}
+    m_Extent: {x: 8.59105, y: 10.8555, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
