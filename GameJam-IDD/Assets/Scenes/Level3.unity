@@ -1939,6 +1939,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: movementSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
       propertyPath: enemyDirection
       value: 0
       objectReference: {fileID: 0}
@@ -8887,8 +8891,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -10.16535, y: 22.6851, z: 0}
-    m_Extent: {x: 12.337351, y: 22.444801, z: 0}
+    m_Center: {x: -10.1636505, y: 22.6854, z: 0}
+    m_Extent: {x: 12.35005, y: 22.442598, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
