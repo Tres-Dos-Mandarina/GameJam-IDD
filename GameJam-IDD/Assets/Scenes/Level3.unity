@@ -12176,8 +12176,8 @@ Tilemap:
   - first: {x: 2, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
+      m_TileIndex: 8
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -12959,8 +12959,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 1d437c45c204afd4fb3ff04a5f013428, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 9419f42df67df17478a526c9242bd00b, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
@@ -12971,7 +12971,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: f9e997141d29c3b42b2f157eaccf801d, type: 2}
   - m_RefCount: 46
     m_Data: {fileID: 11400000, guid: 4325b768258c14841afd1249ca1d133b, type: 2}
-  - m_RefCount: 44
+  - m_RefCount: 45
     m_Data: {fileID: 11400000, guid: 38910ed27a166b04b88d7e8ce64ddbf8, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: d242be02a9f39de4eafdfb92b0914d3d, type: 2}
@@ -12980,8 +12980,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 1550822661, guid: fe3a3cf59ef385b48b54572ded6c12ec, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 736230670, guid: d52bda4b2a176a5429532f23057977b0, type: 3}
   - m_RefCount: 1
@@ -12992,7 +12992,7 @@ Tilemap:
     m_Data: {fileID: 1453186020, guid: d52bda4b2a176a5429532f23057977b0, type: 3}
   - m_RefCount: 46
     m_Data: {fileID: -14856510, guid: d52bda4b2a176a5429532f23057977b0, type: 3}
-  - m_RefCount: 44
+  - m_RefCount: 45
     m_Data: {fileID: 624068207, guid: d52bda4b2a176a5429532f23057977b0, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 247588543, guid: d52bda4b2a176a5429532f23057977b0, type: 3}
@@ -13557,8 +13557,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -10.1668, y: 22.6783, z: 0}
-    m_Extent: {x: 12.3515, y: 22.4367, z: 0}
+    m_Center: {x: -10.155951, y: 22.6764, z: 0}
+    m_Extent: {x: 12.34495, y: 22.4351, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
