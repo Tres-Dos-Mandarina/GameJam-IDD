@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        roomLight = GameObject.Find("DoorLight");
-        door = GameObject.Find("Door");
+        roomLight = GameObject.Find("DoorLight") ? GameObject.Find("DoorLight") : null;
+        door = GameObject.Find("Door") ? GameObject.Find("Door") : null;
         // Eat cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -40,16 +40,7 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-
-        saveData = FindObjectOfType<SaveData>();
-        if(!saveData.DoesFileExist())
-        {
-            saveData.SaveToJson(false, true, false);
-        }
-        else
-        {
-            saveData.LoadFromJson();
-        }
+        
         menuCanvas = GameObject.Find("MenuCanvas");
         menuCanvas.SetActive(false);
         isMenuOn = false;
@@ -61,9 +52,24 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
-        roomLight.SetActive(false);
+        
+        saveData = FindObjectOfType<SaveData>();
+        if(!saveData.DoesFileExist())
+        {
+            saveData.SaveToJson(false, true, false);
+        }
+        else
+        {
+            saveData.LoadFromJson();
+        }
+        
+        if(roomLight != null)
+            roomLight.SetActive(false);
+        
+        if(door != null)
+            door.SetActive(true);
+        
         timer.gameObject.SetActive(saveData.config.speedrun);
-        door.SetActive(true);
         GameStart();
     }
     public void ChangeLevel()

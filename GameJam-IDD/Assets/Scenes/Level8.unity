@@ -6308,6 +6308,145 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5083430014883898767, guid: 6a92b77174996224bb2b3ff8745e8f76, type: 3}
   m_PrefabInstance: {fileID: 740699137}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &769230200
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 910307164154884659, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_Name
+      value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: onLightTurnOff
+      value: 
+      objectReference: {fileID: 11400000, guid: d2685df5effe0e64b927be8315fa6c03, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 910307164154884659, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 769230204}
+    - targetCorrespondingSourceObject: {fileID: 910307164154884659, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 769230203}
+  m_SourcePrefab: {fileID: 100100000, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+--- !u!1 &769230201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 910307164154884659, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+  m_PrefabInstance: {fileID: 769230200}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &769230202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+  m_PrefabInstance: {fileID: 769230200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769230201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b709102784655428da93c59c2ede3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &769230203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769230201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d13fdd69cd32c24388a3ed425732b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: a3f74e47a95a74c49b5af92019d271ca, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 769230202}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: StopEnemy
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &769230204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769230201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d13fdd69cd32c24388a3ed425732b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d2685df5effe0e64b927be8315fa6c03, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 769230202}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: StartEnemy
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &840198346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11050,8 +11189,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -4.9220505, y: 11.28385, z: 0}
-    m_Extent: {x: 7.12675, y: 10.85965, z: 0}
+    m_Center: {x: -4.9167, y: 11.280001, z: 0}
+    m_Extent: {x: 7.1282, y: 10.8505, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
@@ -11332,6 +11471,7 @@ SceneRoots:
   - {fileID: 502116398}
   - {fileID: 1051264480}
   - {fileID: 407490176}
+  - {fileID: 769230200}
   - {fileID: 1886455668}
   - {fileID: 662775959461415263}
   - {fileID: 992521016326145629}
