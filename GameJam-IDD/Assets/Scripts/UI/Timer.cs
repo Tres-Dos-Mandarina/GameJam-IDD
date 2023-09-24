@@ -42,8 +42,8 @@ public class Timer : MonoBehaviour
 
     public void GameStart(Component sender, object data)
     {
-        StartTimer();
         startTime = saveData.config.time;
+        StartTimer();
     }
 
     public void StartTimer()
