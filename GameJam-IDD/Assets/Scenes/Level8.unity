@@ -4497,6 +4497,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1678083778269969485, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6770761347279125815}
+    - target: {fileID: 1678083778269969485, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToGameFromSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476653416565221090, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6770761347279125815}
+    - target: {fileID: 2476653416565221090, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 5794235885332218248, guid: 55ea8bbba404da24f9b6b714e562503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -20615,8 +20631,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: 1.94415, y: 6.21775, z: 0}
-    m_Extent: {x: 5.14715, y: 5.82655, z: 0}
+    m_Center: {x: 1.9439, y: 6.2182503, z: 0}
+    m_Extent: {x: 5.1446, y: 5.83115, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
