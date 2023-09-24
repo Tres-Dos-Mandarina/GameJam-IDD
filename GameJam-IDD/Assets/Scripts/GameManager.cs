@@ -190,7 +190,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Avanzando al siguiente nivel");
                 int scenes = UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings;
 
-                if(SceneManager.GetActiveScene().buildIndex + 1 < scenes -1) 
+                if(SceneManager.GetActiveScene().buildIndex + 1 <= scenes -1) 
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 else
                     SceneManager.LoadScene(0);

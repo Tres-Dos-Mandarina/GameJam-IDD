@@ -6482,11 +6482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6613899434109478593, guid: e7afe78953a021647b7feaea64f5ae23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.8322182
+      value: -3.97
       objectReference: {fileID: 0}
     - target: {fileID: 6613899434109478593, guid: e7afe78953a021647b7feaea64f5ae23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5598178
+      value: -2.68
       objectReference: {fileID: 0}
     - target: {fileID: 6613899434109478593, guid: e7afe78953a021647b7feaea64f5ae23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8813,7 +8813,7 @@ Transform:
   m_GameObject: {fileID: 1500619269}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.27, y: -2.96, z: 0}
+  m_LocalPosition: {x: -6.03, y: -2.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10590,7 +10590,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 3.2912092, w: 0}
+  m_margin: {x: -0.43570328, y: 0, z: 2.993102, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11208,8 +11208,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -4.92205, y: 11.2754, z: 0}
-    m_Extent: {x: 7.12845, y: 10.8524, z: 0}
+    m_Center: {x: -4.92525, y: 11.28415, z: 0}
+    m_Extent: {x: 7.1242504, y: 10.84695, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123

@@ -19575,7 +19575,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 3.2912092, w: 0}
+  m_margin: {x: -0.44747162, y: 0, z: 2.976325, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -20631,8 +20631,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: 1.9472499, y: 6.2188497, z: 0}
-    m_Extent: {x: 5.14495, y: 5.83505, z: 0}
+    m_Center: {x: 1.9553001, y: 6.2116, z: 0}
+    m_Extent: {x: 5.148, y: 5.8301997, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
