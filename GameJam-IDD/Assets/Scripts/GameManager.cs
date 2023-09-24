@@ -197,6 +197,10 @@ public class GameManager : MonoBehaviour
     
     IEnumerator HandleLoadScene()
     {
+        if(saveData.config.audio)
+        {
+            MuteAllAudioSources(GetAllAudioSource());
+        }
         GetComponent<Transition>().FadeOut();
         yield return new WaitForSeconds(2);
         while (!nextLevel)
@@ -221,12 +225,20 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Avanzando al siguiente nivel");
                 int scenes = UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings;
 
-                if(SceneManager.GetActiveScene().buildIndex + 1 <= scenes -1) 
+                if(SceneManager.GetActiveScene().buildIndex + 1 <= scenes -1)
+                {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    if (saveData.config.audio)
+                    {
+                        TurnOnAllAudios(GetAllAudioSource());
+                    }
+                }
+                    
                 else
                     SceneManager.LoadScene(0);
                 canAdvanceLevel = false;
             }
+
         }        
     }
     public void HandleLightTurnOff(Component sender, object data)
