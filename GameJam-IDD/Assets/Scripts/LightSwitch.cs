@@ -6,6 +6,8 @@ public class LightSwitch : MonoBehaviour
     public GameEvent onPopUpEnter;
     public GameEvent onPopUpExit;
     public AudioSource switchSound;
+    public GameObject lightGrid;
+    public GameObject darkGrid;
     private Animator anim;
     bool isEventCalled = false;
     bool canInteract = false;
@@ -26,6 +28,8 @@ public class LightSwitch : MonoBehaviour
                 anim.SetBool("IsPressed",true);
                 switchSound.Play();
                 onLightTurnOff.Raise(this, EnemyState.Moving);
+                lightGrid.SetActive(false);
+                darkGrid.SetActive(true);
                 onPopUpExit.Raise(this, 0);
             }
         }
