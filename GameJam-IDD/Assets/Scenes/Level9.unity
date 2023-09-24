@@ -3275,7 +3275,7 @@ GameObject:
   - component: {fileID: 195871376}
   - component: {fileID: 195871378}
   - component: {fileID: 195871377}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemySpikes (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3439,7 +3439,7 @@ GameObject:
   - component: {fileID: 213069130}
   - component: {fileID: 213069132}
   - component: {fileID: 213069131}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemySpikes (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15112,7 +15112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 698970719}
   - component: {fileID: 698970720}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16070,7 +16070,7 @@ GameObject:
   - component: {fileID: 1120772556}
   - component: {fileID: 1120772558}
   - component: {fileID: 1120772557}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemySpikes (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16437,78 +16437,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4804279430550676170, guid: 62c3365303cdbd541a9e3a773a6c9a77, type: 3}
   m_PrefabInstance: {fileID: 1337727515}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1347376988 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 910307164154884659, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
-  m_PrefabInstance: {fileID: 2047650462}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1347376989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347376988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d13fdd69cd32c24388a3ed425732b07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: a3f74e47a95a74c49b5af92019d271ca, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1347377001}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: StopEnemy
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1347376990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347376988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d13fdd69cd32c24388a3ed425732b07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: d2685df5effe0e64b927be8315fa6c03, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1347377001}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: StartEnemy
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1347377001 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
-  m_PrefabInstance: {fileID: 2047650462}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347376988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b709102784655428da93c59c2ede3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1364936340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16883,7 +16811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1501321483}
   - component: {fileID: 1501321484}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18109,7 +18037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1935106554}
   - component: {fileID: 1935106555}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18235,28 +18163,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
-      propertyPath: movementSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
-      propertyPath: enemyDirection
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
-      propertyPath: onLightTurnOff
-      value: 
-      objectReference: {fileID: 11400000, guid: d2685df5effe0e64b927be8315fa6c03, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 910307164154884659, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1347376990}
-    - targetCorrespondingSourceObject: {fileID: 910307164154884659, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1347376989}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
 --- !u!1001 &2083953150
 PrefabInstance:
@@ -18441,7 +18351,7 @@ GameObject:
   - component: {fileID: 4804279431928841760}
   - component: {fileID: 7363045842062760267}
   - component: {fileID: 5622841684953540736}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemySpikes (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18459,7 +18369,7 @@ GameObject:
   - component: {fileID: 4804279431484878801}
   - component: {fileID: 7363045841769853114}
   - component: {fileID: 5622841684575420785}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemySpikes (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18477,7 +18387,7 @@ GameObject:
   - component: {fileID: 4804279431355322654}
   - component: {fileID: 7363045841631874677}
   - component: {fileID: 5622841684444970942}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemySpikes (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18495,7 +18405,7 @@ GameObject:
   - component: {fileID: 4804279430955758848}
   - component: {fileID: 7363045843371403883}
   - component: {fileID: 5622841686195100576}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemySpikes (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20218,7 +20128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9113129813644734379}
   - component: {fileID: 2976430216895570727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20235,7 +20145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9113129813516325220}
   - component: {fileID: 2976430216751472104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20252,7 +20162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9113129813004204181}
   - component: {fileID: 2976430216458499097}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20269,7 +20179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9113129814044429237}
   - component: {fileID: 2976430217297364793}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20759,8 +20669,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: 1.94425, y: 6.2149, z: 0}
-    m_Extent: {x: 5.14675, y: 5.8294, z: 0}
+    m_Center: {x: 1.9567, y: 6.216, z: 0}
+    m_Extent: {x: 5.1434, y: 5.8383, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
