@@ -31,10 +31,16 @@ public class GameManager : MonoBehaviour
 
     private GameObject mainMenu;
 
+    [Header("Audios")]
+    private AudioSource src;
+    public AudioClip mouseHover;
+    public AudioClip mousePressed;
+
     private void Awake()
     {
         roomLight = GameObject.Find("DoorLight") ? GameObject.Find("DoorLight") : null;
         door = GameObject.Find("Door") ? GameObject.Find("Door") : null;
+        src = GetComponent<AudioSource>();
         // Eat cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -256,5 +262,15 @@ public class GameManager : MonoBehaviour
                 ligh.gameObject.SetActive(true);
             }
         }
+    }
+    public void PlayMouseHoverSound()
+    {
+        src.clip = mouseHover;
+        src.PlayOneShot(src.clip);
+    }
+    public void PlayMousePressedSound()
+    {
+        src.clip = mousePressed;
+        src.PlayOneShot(src.clip);
     }
 }
