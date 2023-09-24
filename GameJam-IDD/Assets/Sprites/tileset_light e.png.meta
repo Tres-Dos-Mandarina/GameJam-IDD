@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5a3045f97a0f6624f8522d2c165483c2
+guid: fe3a3cf59ef385b48b54572ded6c12ec
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tileset_light 1_0
+      name: tileset_light_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdd7138a33fc01c4ca26e56e2b5f76e8
-      internalID: -2126844287
+      spriteID: f38402aaba5d83c4686b9d8767af1534
+      internalID: -766862384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_1
+      name: tileset_light_1
       rect:
         serializedVersion: 2
         x: 96
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cfe4d7781ad1a24794b1b01791f5b4f
-      internalID: 465650129
+      spriteID: a5b8aa4b3cc684342b477c3d78df7a88
+      internalID: -2126350748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_2
+      name: tileset_light_2
       rect:
         serializedVersion: 2
         x: 192
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8db0db5067c0bf843a659ff51ef35d14
-      internalID: 1283585520
+      spriteID: a13fbde43a8043142b9bcb5627573344
+      internalID: -1356592847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_3
+      name: tileset_light_3
       rect:
         serializedVersion: 2
         x: 288
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97cd218f25e3f6449bfcdcbdeb164851
-      internalID: -400915788
+      spriteID: 2f65891ef4446334fa566b7a8a22e787
+      internalID: -623864514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_4
+      name: tileset_light_4
       rect:
         serializedVersion: 2
         x: 384
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1dd42adb30d38e41bb73b3a6f123d15
-      internalID: 113027223
+      spriteID: 5a3cb1147bcbfd3439a48725006fea5a
+      internalID: -424935191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_5
+      name: tileset_light_5
       rect:
         serializedVersion: 2
         x: 0
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73aebb2b8864db840a782561bb3702b0
-      internalID: -1669053664
+      spriteID: 3fa121e8c5d80f044b391000d08b25a6
+      internalID: 472412274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_6
+      name: tileset_light_6
       rect:
         serializedVersion: 2
         x: 96
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dff85a276da8084588052124d504490
-      internalID: 1819169226
+      spriteID: 5d96810a411eb6b47ba64e646575c544
+      internalID: 1736822376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_7
+      name: tileset_light_7
       rect:
         serializedVersion: 2
         x: 192
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5302c44666f068419893b3b6fb57030
-      internalID: -1400377898
+      spriteID: 2229de08bd14c4f42aa102f8389c8099
+      internalID: 1991004544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_8
+      name: tileset_light_8
       rect:
         serializedVersion: 2
         x: 288
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1ba54a734c9dc145ad4094142c72099
-      internalID: 1782067952
+      spriteID: 36486e6dc5402f3489b948bd4bae020b
+      internalID: 1820617583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_9
+      name: tileset_light_9
       rect:
         serializedVersion: 2
         x: 384
@@ -326,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87acbd934f9cad44d9ec1c98b593fb0d
-      internalID: -1937268938
+      spriteID: 133b55f3095994b489e2fb97551f606a
+      internalID: -67714168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_10
+      name: tileset_light_10
       rect:
         serializedVersion: 2
         x: 0
@@ -347,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7191bc4c700fcbf46a73998096eded2a
-      internalID: -1454291141
+      spriteID: e0c2accd3186f5f488a43cad5bf8395b
+      internalID: 13858656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_11
+      name: tileset_light_11
       rect:
         serializedVersion: 2
         x: 96
@@ -368,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9459f8ea2366d94489d072ffd0f2a1e
-      internalID: 1111996616
+      spriteID: abf5b26f398f6934e8383fc328c4cdb8
+      internalID: 1550822661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_12
+      name: tileset_light_12
       rect:
         serializedVersion: 2
         x: 192
@@ -389,56 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eefd4362d7f6f4c459106c206c56e4d6
-      internalID: -1287918604
+      spriteID: c6d2f7c3c9829a0469df1363cfb0745d
+      internalID: -1084761982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_13
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 192
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b65338f2424067c44b29625f3d7af161
-      internalID: -586867860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileset_light 1_14
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 192
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 436fba9321623814ca2ca47a7759d242
-      internalID: -124643555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileset_light 1_15
+      name: tileset_light_13
       rect:
         serializedVersion: 2
         x: 0
@@ -452,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a9b5c8f45ad9f64cb5a54addef974cc
-      internalID: -1437660227
+      spriteID: 538926d89971c364ead6186d9f14041c
+      internalID: -1480209641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_16
+      name: tileset_light_14
       rect:
         serializedVersion: 2
         x: 96
@@ -473,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3452d5b3bf0986745a438fec2a98411f
-      internalID: 1253174039
+      spriteID: 305871f4751b68d4f886974473ff0940
+      internalID: 162391812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_17
+      name: tileset_light_15
       rect:
         serializedVersion: 2
         x: 192
@@ -494,35 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 999b77900f2e5f947a0c980bb938cee6
-      internalID: -453621371
+      spriteID: a9573080a39aecd4ba9e09b5a4a87029
+      internalID: 993247181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_18
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 96
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 934c1414fd47d3848b8f5ac7725f4bff
-      internalID: 1270860901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileset_light 1_19
+      name: tileset_light_16
       rect:
         serializedVersion: 2
         x: 0
@@ -536,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d53b9c1cc07f1543bfee64edb226df9
-      internalID: 279039339
+      spriteID: 76547042a40f1a24dbc4e2cfa82712f1
+      internalID: 804571018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_20
+      name: tileset_light_17
       rect:
         serializedVersion: 2
         x: 96
@@ -557,14 +494,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b257e89fbf5152544ae0687d4645b3d2
-      internalID: -747432700
+      spriteID: c548ec8135a2bf0488710b448a1238ac
+      internalID: 980441239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_light 1_21
+      name: tileset_light_18
       rect:
         serializedVersion: 2
         x: 192
@@ -578,50 +515,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1cc57a1f75e9fa459cb1bf83e635ec0
-      internalID: 377676563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileset_light 1_22
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe1cce101832f5746b4243cad7f2a626
-      internalID: 391211489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileset_light 1_23
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59ad9ebec9760a5448b4aa3aa39277ea
-      internalID: -1404281357
+      spriteID: 18c963bc49b80304ba80e436d4115f57
+      internalID: 339011675
       vertices: []
       indices: 
       edges: []
@@ -637,30 +532,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tileset_light 1_0: -2126844287
-      tileset_light 1_1: 465650129
-      tileset_light 1_10: -1454291141
-      tileset_light 1_11: 1111996616
-      tileset_light 1_12: -1287918604
-      tileset_light 1_13: -586867860
-      tileset_light 1_14: -124643555
-      tileset_light 1_15: -1437660227
-      tileset_light 1_16: 1253174039
-      tileset_light 1_17: -453621371
-      tileset_light 1_18: 1270860901
-      tileset_light 1_19: 279039339
-      tileset_light 1_2: 1283585520
-      tileset_light 1_20: -747432700
-      tileset_light 1_21: 377676563
-      tileset_light 1_22: 391211489
-      tileset_light 1_23: -1404281357
-      tileset_light 1_3: -400915788
-      tileset_light 1_4: 113027223
-      tileset_light 1_5: -1669053664
-      tileset_light 1_6: 1819169226
-      tileset_light 1_7: -1400377898
-      tileset_light 1_8: 1782067952
-      tileset_light 1_9: -1937268938
+      tileset_light_0: -766862384
+      tileset_light_1: -2126350748
+      tileset_light_10: 13858656
+      tileset_light_11: 1550822661
+      tileset_light_12: -1084761982
+      tileset_light_13: -1480209641
+      tileset_light_14: 162391812
+      tileset_light_15: 993247181
+      tileset_light_16: 804571018
+      tileset_light_17: 980441239
+      tileset_light_18: 339011675
+      tileset_light_2: -1356592847
+      tileset_light_3: -623864514
+      tileset_light_4: -424935191
+      tileset_light_5: 472412274
+      tileset_light_6: 1736822376
+      tileset_light_7: 1991004544
+      tileset_light_8: 1820617583
+      tileset_light_9: -67714168
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
