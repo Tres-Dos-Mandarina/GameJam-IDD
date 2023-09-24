@@ -32393,7 +32393,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 24.158913
   m_PointLightOuterAngle: 140.99915
   m_PointLightInnerRadius: 1.83
-  m_PointLightOuterRadius: 10
+  m_PointLightOuterRadius: 31
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -34175,8 +34175,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: 1.9511001, y: 6.2109003, z: 0}
-    m_Extent: {x: 5.1396, y: 5.8293, z: 0}
+    m_Center: {x: 1.9501, y: 6.20775, z: 0}
+    m_Extent: {x: 5.1513, y: 5.83295, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
