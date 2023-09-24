@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     private Vector3 newPlayerStartPosition;
     private SaveData saveData;
 
+    private Timer timer;
+
     private void Awake()
     {
         roomLight = GameObject.Find("DoorLight");
@@ -49,11 +51,14 @@ public class GameManager : MonoBehaviour
         menuCanvas = GameObject.Find("MenuCanvas");
         menuCanvas.SetActive(false);
         isMenuOn = false;
+
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
     }
     private void Start()
     {
         player = GameObject.Find("Player");
         roomLight.SetActive(false);
+        timer.gameObject.SetActive(saveData.config.speedrun);
         door.SetActive(true);
         GameStart();
     }
@@ -92,14 +97,7 @@ public class GameManager : MonoBehaviour
         
         HandleNextLevel();
     } 
-    public void BackToGameFromSettings()
-    {
-        menuCanvas.SetActive(false);
-        saveData.SaveToJson(saveData.config.speedrun, saveData.config.audio, saveData.config.kenkri);
-        isMenuOn = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+
     public void GoToMainMenu()
     {
         BackToGameFromSettings();
@@ -111,17 +109,38 @@ public class GameManager : MonoBehaviour
         {
             if(isMenuOn)
             {
+
                 BackToGameFromSettings();
             }
             else
             {
-                menuCanvas.SetActive(true);
-                isMenuOn = true;
-                Cursor.lockState = CursorLockMode.Confined;
-                Cursor.visible = true;
+                OpenSettingsFromGame();
             }
         }
     }
+
+    public void BackToGameFromSettings()
+    {
+        Time.timeScale = 1f;
+        menuCanvas.SetActive(false);
+        saveData.SaveToJson(saveData.config.speedrun, saveData.config.audio, saveData.config.kenkri);
+        timer.gameObject.SetActive(saveData.config.speedrun);
+        timer.ResumeTimer();
+        isMenuOn = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void OpenSettingsFromGame()
+    {
+        Time.timeScale = 0f;
+        timer.StopTimer();
+        menuCanvas.SetActive(true);
+        isMenuOn = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
+
     public void HandleNextLevel()
     {
         StartCoroutine(HandleLoadScene());
