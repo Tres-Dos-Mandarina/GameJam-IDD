@@ -17,6 +17,11 @@ public class MainMenuManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        settingsMenu.SetActive(false);
+    }
+
     public void LoadFirstLevel()
     {
         SceneManager.LoadScene("Level1");

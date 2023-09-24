@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     private Timer timer;
 
+    private GameObject mainMenu;
+
     private void Awake()
     {
         roomLight = GameObject.Find("DoorLight");
@@ -53,6 +55,8 @@ public class GameManager : MonoBehaviour
         isMenuOn = false;
 
         timer = GameObject.Find("Timer").GetComponent<Timer>();
+
+        mainMenu = GameObject.Find("Main Menu");
     }
     private void Start()
     {
@@ -129,6 +133,13 @@ public class GameManager : MonoBehaviour
         isMenuOn = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if (mainMenu != null)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            mainMenu.SetActive(true);
+        }
     }
 
     public void OpenSettingsFromGame()
