@@ -60,6 +60,12 @@ public class PlayerEvents : MonoBehaviour
     }
     // Here it goes the code to fall and jump
 
+    public void JumpSound()
+    {
+        audioSource.clip = jumpAudio;
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+
     public void ThrowRaycastToKnowIfFalling()
     {
         Color c = Color.red;
@@ -104,9 +110,5 @@ public class PlayerEvents : MonoBehaviour
             }
         }
     }
-    public void JumpSound()
-    {
-        audioSource.clip = jumpAudio;
-        audioSource.PlayOneShot(audioSource.clip);
-    }
+    
 }

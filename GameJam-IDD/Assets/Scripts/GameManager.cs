@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     private AudioSource src;
     public AudioClip mouseHover;
     public AudioClip mousePressed;
+    public AudioClip deathAudio;
+
 
     private void Awake()
     {
@@ -129,6 +131,8 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator LoadFastLevel()
     {
+        src.PlayOneShot(deathAudio);
+        src.pitch = 1.8f;
         player.SetActive(false);
         yield return new WaitForSeconds(.25f);
         
