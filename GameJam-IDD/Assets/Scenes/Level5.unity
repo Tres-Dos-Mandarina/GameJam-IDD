@@ -1434,6 +1434,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
+      propertyPath: movementSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
       propertyPath: enemyDirection
       value: 0
       objectReference: {fileID: 0}
@@ -1834,11 +1838,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7962964897407290252, guid: af5171bed88759540a01d7efed6593a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.45
+      value: 8.366
       objectReference: {fileID: 0}
     - target: {fileID: 7962964897407290252, guid: af5171bed88759540a01d7efed6593a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8
+      value: -2.861
       objectReference: {fileID: 0}
     - target: {fileID: 7962964897407290252, guid: af5171bed88759540a01d7efed6593a5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7794,7 +7798,7 @@ PrefabInstance:
       objectReference: {fileID: 5146986213132493015}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.6814518
+      value: 4.728979
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7802,7 +7806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.6814518
+      value: 4.728979
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7889,8 +7893,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -4.1546, y: 15.6517, z: 0}
-    m_Extent: {x: 6.2655, y: 15.5768, z: 0}
+    m_Center: {x: -4.151, y: 15.66615, z: 0}
+    m_Extent: {x: 6.2629995, y: 15.576051, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
