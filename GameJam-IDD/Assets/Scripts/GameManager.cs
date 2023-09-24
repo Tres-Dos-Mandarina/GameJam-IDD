@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -187,7 +188,12 @@ public class GameManager : MonoBehaviour
             if (canAdvanceLevel && Input.anyKeyDown)
             {
                 Debug.Log("Avanzando al siguiente nivel");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                int scenes = UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings;
+
+                if(SceneManager.GetActiveScene().buildIndex + 1 < scenes -1) 
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                else
+                    SceneManager.LoadScene(0);
                 canAdvanceLevel = false;
             }
         }        
