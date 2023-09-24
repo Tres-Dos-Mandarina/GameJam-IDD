@@ -49,10 +49,10 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.7685564, g: 0.8812886, b: 0.9528302, a: 1}
-  m_Intensity: 0.02
+  m_Intensity: 0.3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000afa7886c
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 2
   m_FalloffIntensity: 0.752
   m_Color: {r: 0.990566, g: 0.9721981, b: 0.35978103, a: 1}
-  m_Intensity: 0.77
+  m_Intensity: 3.5
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 1
   m_ApplyToSortingLayers: 00000000
@@ -464,8 +464,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -4.07975, y: 15.80035, z: 0}
-    m_Extent: {x: 6.26805, y: 15.57465, z: 0}
+    m_Center: {x: -4.0894003, y: 15.8056, z: 0}
+    m_Extent: {x: 6.2766, y: 15.5747, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
