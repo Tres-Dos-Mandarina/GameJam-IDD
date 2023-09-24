@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,6 +51,27 @@ public class GameManager : MonoBehaviour
 
         mainMenu = GameObject.Find("Main Menu");
     }
+    public List<AudioSource> GetAllAudioSource()
+    {
+        List<AudioSource> allAudios = new List<AudioSource>();
+        
+        allAudios = FindObjectsOfType<AudioSource>().ToList();
+        return allAudios;
+    }
+    public void MuteAllAudioSources(List<AudioSource> audios)
+    {
+        foreach (AudioSource audio in audios)
+        {
+            audio.enabled = false;
+        }
+    }
+    public void TurnOnAllAudios(List<AudioSource> audios)
+    {
+        foreach (AudioSource audio in audios)
+        {
+            audio.enabled = true;
+        }
+    }
     private void Start()
     {
         player = GameObject.Find("Player");
@@ -63,8 +85,8 @@ public class GameManager : MonoBehaviour
         {
             saveData.LoadFromJson();
         }
-        
-        if(roomLight != null)
+        ;
+        if (roomLight != null)
             roomLight.SetActive(false);
         
         if(door != null)
@@ -72,6 +94,15 @@ public class GameManager : MonoBehaviour
         
         timer.gameObject.SetActive(saveData.config.speedrun);
         GameStart();
+
+        if(saveData.config.audio)
+        {
+            TurnOnAllAudios(GetAllAudioSource());
+        }
+        else
+        {
+            MuteAllAudioSources(GetAllAudioSource());
+        }
     }
     public void ChangeLevel()
     {
@@ -166,6 +197,10 @@ public class GameManager : MonoBehaviour
     
     IEnumerator HandleLoadScene()
     {
+        if(saveData.config.audio)
+        {
+            MuteAllAudioSources(GetAllAudioSource());
+        }
         GetComponent<Transition>().FadeOut();
         yield return new WaitForSeconds(2);
         while (!nextLevel)
@@ -190,12 +225,20 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Avanzando al siguiente nivel");
                 int scenes = UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings;
 
-                if(SceneManager.GetActiveScene().buildIndex + 1 <= scenes -1) 
+                if(SceneManager.GetActiveScene().buildIndex + 1 <= scenes -1)
+                {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    if (saveData.config.audio)
+                    {
+                        TurnOnAllAudios(GetAllAudioSource());
+                    }
+                }
+                    
                 else
                     SceneManager.LoadScene(0);
                 canAdvanceLevel = false;
             }
+
         }        
     }
     public void HandleLightTurnOff(Component sender, object data)
