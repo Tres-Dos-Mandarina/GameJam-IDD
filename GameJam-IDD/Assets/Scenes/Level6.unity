@@ -21458,8 +21458,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -5.7709, y: 20.5952, z: 0}
-    m_Extent: {x: 7.8998003, y: 20.1455, z: 0}
+    m_Center: {x: -5.78135, y: 20.5956, z: 0}
+    m_Extent: {x: 7.89925, y: 20.1385, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
@@ -21578,6 +21578,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8217706072723031117, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
   m_PrefabInstance: {fileID: 3848023046206153882}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5146986213132493016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7862007348849066975, guid: db56601e429d1ca4299b0943b957ddf6, type: 3}
+  m_PrefabInstance: {fileID: 3848023046206153882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75df7b93fdbdbfa4cb8e1381c7269791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5542720347257196067
 Transform:
   m_ObjectHideFlags: 0
@@ -21765,6 +21776,30 @@ PrefabInstance:
     - target: {fileID: 993115452473553950, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
       propertyPath: m_Name
       value: Managers
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982627970949285142, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982627970949285142, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 5146986213132493016}
+    - target: {fileID: 4982627970949285142, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982627970949285142, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnightSwitchOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982627970949285142, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerEvents, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982627970949285142, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5557787889872889401, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
       propertyPath: deathAudio
@@ -22175,7 +22210,7 @@ PrefabInstance:
       objectReference: {fileID: 5146986213132493015}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3580952
+      value: -2.3541973
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22183,7 +22218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3580952
+      value: -2.3541973
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y

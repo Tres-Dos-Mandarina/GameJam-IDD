@@ -19,6 +19,7 @@ public class PlayerEvents : MonoBehaviour
     [Header("Check Ground")]
     public float groundCheckDistance;
     public bool playerIsFalling = false;
+    private bool _isLightSwichOff = false;
     public AudioClip jumpAudio;
     public AudioClip[] stepAudios;
 
@@ -65,6 +66,10 @@ public class PlayerEvents : MonoBehaviour
         audioSource.clip = jumpAudio;
         audioSource.PlayOneShot(audioSource.clip);
     }
+    public void OnightSwitchOff(Component sender, object data)
+    {
+        _isLightSwichOff = true;
+    }
 
     public void ThrowRaycastToKnowIfFalling()
     {
@@ -100,7 +105,7 @@ public class PlayerEvents : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("SwitchEnemyTrigger"))
+        if(collision.gameObject.CompareTag("SwitchEnemyTrigger") && _isLightSwichOff)
         {
             if(enemy != null)
             {
