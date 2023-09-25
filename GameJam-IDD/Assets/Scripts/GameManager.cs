@@ -178,10 +178,7 @@ public class GameManager : MonoBehaviour
     public void HandlePlayerGoal(Component sender, object data)
     {
         player.GetComponent<Player>().DisableMovement();
-        src.clip = snoreing;
-        src.pitch = 1.8f;
-        src.loop = true;
-        src.Play();
+       
         timer.StopTimer();
         HandleNextLevel();
     } 
@@ -250,12 +247,21 @@ public class GameManager : MonoBehaviour
     
     IEnumerator HandleLoadScene()
     {
-        if(saveData.config.audio)
+        GetComponent<Transition>().FadeOut();
+
+        yield return new WaitForSeconds(1f);
+
+        src.clip = snoreing;
+        src.pitch = 1.8f;
+        src.loop = true;
+        src.Play();
+        if (saveData.config.audio)
         {
             MuteAllAudioSources(GetAllAudioSource());
         }
-        GetComponent<Transition>().FadeOut();
+
         yield return new WaitForSeconds(1f);
+
         while (!nextLevel)
         {
             yield return null;
