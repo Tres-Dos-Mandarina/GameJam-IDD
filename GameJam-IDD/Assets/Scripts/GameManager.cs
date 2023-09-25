@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public AudioClip mouseHover;
     public AudioClip mousePressed;
     public AudioClip deathAudio;
+    public AudioClip snoreing;
 
     private GameObject turboMainMenu;
 
@@ -169,6 +170,7 @@ public class GameManager : MonoBehaviour
     public void HandlePlayerGoal(Component sender, object data)
     {
         player.GetComponent<Player>().DisableMovement();
+        src.PlayOneShot(snoreing);
         timer.StopTimer();
         HandleNextLevel();
     } 
