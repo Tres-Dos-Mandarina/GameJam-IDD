@@ -3659,7 +3659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.26
+      value: -17.41
       objectReference: {fileID: 0}
     - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3707,7 +3707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
       propertyPath: movementSpeed
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
       propertyPath: enemyDirection
@@ -23646,8 +23646,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -5.78095, y: 20.5879, z: 0}
-    m_Extent: {x: 7.9026504, y: 20.1346, z: 0}
+    m_Center: {x: -5.76865, y: 20.595999, z: 0}
+    m_Extent: {x: 7.90335, y: 20.1416, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
@@ -24379,19 +24379,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_ScreenX
-      value: 0.235
+      value: 0.462
       objectReference: {fileID: 0}
     - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_ScreenY
-      value: 0.65
+      value: 0.563
       objectReference: {fileID: 0}
     - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_DeadZoneHeight
-      value: 0.534
+      value: 0.464
       objectReference: {fileID: 0}
     - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_SoftZoneHeight
-      value: 0.8
+      value: 0.765
       objectReference: {fileID: 0}
     - target: {fileID: 5753172451320759828, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: orthographic size
@@ -24403,19 +24403,19 @@ PrefabInstance:
       objectReference: {fileID: 5146986213132493015}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0299716
+      value: -5.1096563
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8554487
+      value: -1.9508078
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0299716
+      value: -5.1096563
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8554487
+      value: -1.9508078
       objectReference: {fileID: 0}
     - target: {fileID: 8366686136958361691, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_Enabled
