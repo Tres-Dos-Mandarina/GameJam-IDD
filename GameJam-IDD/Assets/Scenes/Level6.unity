@@ -3583,7 +3583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.07
+      value: -13.26
       objectReference: {fileID: 0}
     - target: {fileID: 3724256881334436415, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3631,7 +3631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
       propertyPath: movementSpeed
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8843604941914718468, guid: 17496bf93fa2ca94787155ade982f086, type: 3}
       propertyPath: enemyDirection
@@ -23602,8 +23602,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -5.7710505, y: 20.58885, z: 0}
-    m_Extent: {x: 7.90415, y: 20.136251, z: 0}
+    m_Center: {x: -5.77285, y: 20.59985, z: 0}
+    m_Extent: {x: 7.8975496, y: 20.14045, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
@@ -24086,6 +24086,7 @@ MonoBehaviour:
   onGoalReached: {fileID: 11400000, guid: a3f74e47a95a74c49b5af92019d271ca, type: 2}
   popUpEnter: {fileID: 11400000, guid: 39e61dc89e3b0ab4288eb43d641620cd, type: 2}
   popUpExit: {fileID: 11400000, guid: 2ebf00e2bb5f1d04eb9b77093f689336, type: 2}
+  distanceToPlayer: 3
 --- !u!114 &6933557678158795532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24326,27 +24327,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_BiasX
-      value: -0.04
+      value: -0.004
       objectReference: {fileID: 0}
     - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_BiasY
-      value: 0.253
+      value: -0.331
       objectReference: {fileID: 0}
     - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_ScreenX
-      value: 0.339
+      value: 0.235
       objectReference: {fileID: 0}
     - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_ScreenY
-      value: 0.52
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_DeadZoneHeight
-      value: 0.656
+      value: 0.534
       objectReference: {fileID: 0}
     - target: {fileID: 2485685265052583501, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_SoftZoneHeight
-      value: 0.948
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5753172451320759828, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: orthographic size
@@ -24358,19 +24359,19 @@ PrefabInstance:
       objectReference: {fileID: 5146986213132493015}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3572273
+      value: -0.02854824
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4921932
+      value: -0.8554487
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3572273
+      value: -0.02854824
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4921932
+      value: -0.8554487
       objectReference: {fileID: 0}
     - target: {fileID: 8366686136958361691, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_Enabled
