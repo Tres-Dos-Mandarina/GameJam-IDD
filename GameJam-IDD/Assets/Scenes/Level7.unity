@@ -9380,7 +9380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &822363411
 Transform:
   m_ObjectHideFlags: 0
@@ -11879,49 +11879,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1358651713}
-    m_ColliderPaths:
-    - - X: 210000000
-        Y: 90000000
-      - X: 200000000
-        Y: 90000000
-      - X: 200000000
-        Y: 20000000
-      - X: 210000000
-        Y: 20000000
-    - - X: 410000000
-        Y: 90000000
-      - X: 400000000
-        Y: 90000000
-      - X: 400000000
-        Y: 50000000
-      - X: 410000000
-        Y: 50000000
-    - - X: 260000000
-        Y: 60000000
-      - X: 250000000
-        Y: 60000000
-      - X: 250000000
-        Y: 30000000
-      - X: 260000000
-        Y: 30000000
-    - - X: 270000000
-        Y: 30000000
-      - X: 260000000
-        Y: 30000000
-      - X: 260000000
-        Y: -40000000
-      - X: 270000000
-        Y: -40000000
-    - - X: -70000000
-        Y: 20000000
-      - X: -80000000
-        Y: 20000000
-      - X: -80000000
-        Y: -40000000
-      - X: -70000000
-        Y: -40000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 40.999973, y: 5}
@@ -12962,49 +12920,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1579598870}
-    m_ColliderPaths:
-    - - X: 410000000
-        Y: 100000000
-      - X: 200000000
-        Y: 100000000
-      - X: 200000000
-        Y: 90000000
-      - X: 410000000
-        Y: 90000000
-    - - X: 260000000
-        Y: 60000000
-      - X: 250000000
-        Y: 60000000
-      - X: 250000000
-        Y: 50000000
-      - X: 260000000
-        Y: 50000000
-    - - X: 200000000
-        Y: 30000000
-      - X: -80000000
-        Y: 30000000
-      - X: -80000000
-        Y: 20000000
-      - X: 200000000
-        Y: 20000000
-    - - X: 410000000
-        Y: 30000000
-      - X: 260000000
-        Y: 30000000
-      - X: 260000000
-        Y: 20000000
-      - X: 410000000
-        Y: 20000000
-    - - X: 270000000
-        Y: -40000000
-      - X: -80000000
-        Y: -40000000
-      - X: -80000000
-        Y: -50000000
-      - X: 270000000
-        Y: -50000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 40.999973, y: 9}
@@ -16577,8 +16493,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -4.9212, y: 11.27945, z: 0}
-    m_Extent: {x: 7.1184998, y: 10.84735, z: 0}
+    m_Center: {x: -4.91915, y: 11.2824, z: 0}
+    m_Extent: {x: 7.1205497, y: 10.846701, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
