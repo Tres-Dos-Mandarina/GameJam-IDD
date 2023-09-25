@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,11 +38,15 @@ public class GameManager : MonoBehaviour
     public AudioClip mousePressed;
     public AudioClip deathAudio;
 
+    private GameObject turboMainMenu;
+
+    private List<Canvas> canvas;
 
     private void Awake()
     {
         roomLight = GameObject.Find("DoorLight") ? GameObject.Find("DoorLight") : null;
         door = GameObject.Find("Door") ? GameObject.Find("Door") : null;
+        canvas = FindObjectsOfType<Canvas>().ToList();
         src = GetComponent<AudioSource>();
         // Eat cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -51,13 +56,30 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
         
-        menuCanvas = GameObject.Find("MenuCanvas");
-        menuCanvas.SetActive(false);
-        isMenuOn = false;
+        
 
         timer = GameObject.Find("Timer").GetComponent<Timer>();
 
-        mainMenu = GameObject.Find("Main Menu");
+        //
+        //
+        // IMPORTANT
+        //
+        // de la linia 70 a les 76 només shan de descomentar quan el joc es compili per web!!!!!!!!!!!!
+
+
+        //foreach(Canvas c in canvas)
+        //{
+        //    c.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1280, 720);
+        //}
+        //GameObject.Find("Main Menu").GetComponent<Transform>().localScale = new Vector3(0.646440029f, 0.646440029f, 0.646440029f);
+        //GameObject.Find("Main Menu").GetComponent<Transform>().position = new Vector3(768.0f, 393.0f, 0f);
+        //GameObject.Find("Holder").GetComponent<Transform>().localScale = new Vector3(0.562837303f, 0.562837303f, 0.562837303f);
+
+        menuCanvas = GameObject.Find("MenuCanvas");
+        menuCanvas.SetActive(false);
+        isMenuOn = false;
+        mainMenu = GameObject.Find("Canvas");
+        turboMainMenu = GameObject.Find("Main Menu");
     }
     public List<AudioSource> GetAllAudioSource()
     {
@@ -174,21 +196,35 @@ public class GameManager : MonoBehaviour
 
     public void BackToGameFromSettings()
     {
-        Time.timeScale = 1f;
-        menuCanvas.SetActive(false);
-        saveData.SaveToJson(saveData.config.speedrun, saveData.config.audio, saveData.config.kenkri);
-        timer.gameObject.SetActive(saveData.config.speedrun);
-        timer.ResumeTimer();
-        isMenuOn = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        if (mainMenu != null)
+        if(SceneManager.GetActiveScene().name != "_MainMenu")
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            mainMenu.SetActive(true);
+            Time.timeScale = 1f;
+            menuCanvas.SetActive(false);
+            saveData.SaveToJson(saveData.config.speedrun, saveData.config.audio, saveData.config.kenkri);
+            timer.gameObject.SetActive(saveData.config.speedrun);
+            timer.ResumeTimer();
+            isMenuOn = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            if (mainMenu != null)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                mainMenu.SetActive(true);
+            }
         }
+        else
+        {
+            Time.timeScale = 1f;
+            menuCanvas.SetActive(false);
+            mainMenu.SetActive(true);
+            isMenuOn = false;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            turboMainMenu.SetActive(true);
+        }
+        
     }
 
     public void OpenSettingsFromGame()
