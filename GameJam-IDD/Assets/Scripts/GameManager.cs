@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
         {
             if (audioSource.clip == snoreing)
             {
+                src.loop = false;
                 allAudios.Remove(audioSource);
                 break;
             }
@@ -181,6 +182,7 @@ public class GameManager : MonoBehaviour
         src.clip = snoreing;
         src.pitch = 1.8f;
         src.PlayOneShot(snoreing);
+        src.loop = true;
         timer.StopTimer();
         HandleNextLevel();
     } 
