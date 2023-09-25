@@ -19,7 +19,6 @@ public class UI_Toggle : MonoBehaviour
     [SerializeField] private Sprite _offSprite;
     [SerializeField] private GameObject _light;
     [SerializeField] private GameObject _rays;
-    [SerializeField] private GameObject _shadow;
     [SerializeField] private GameObject _darken;
     [SerializeField]private Color _color;
     private SaveData _saveData;
@@ -63,7 +62,6 @@ public class UI_Toggle : MonoBehaviour
                 _saveData.config.speedrun = isOn;
                 _light.SetActive(isOn);
                 _rays.SetActive(isOn);
-                _shadow.SetActive(isOn);
                 if (isOn == true)
                     _color.a -= .2f;
                 else
@@ -73,7 +71,6 @@ public class UI_Toggle : MonoBehaviour
                 _saveData.config.audio = isOn;
                 _light.SetActive(isOn);
                 _rays.SetActive(isOn);
-                _shadow.SetActive(isOn);
                 if (isOn == true)
                     _color.a -= .2f;
                 else

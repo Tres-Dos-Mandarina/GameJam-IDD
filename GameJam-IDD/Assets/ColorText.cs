@@ -14,6 +14,7 @@ public class ColorText : MonoBehaviour
     private void Awake()
     {
         theText = this.transform.GetChild(0).GetComponent<TMP_Text>();
+        theText.color = colors[0];
     }
 
     public void OnPointerEnter()
