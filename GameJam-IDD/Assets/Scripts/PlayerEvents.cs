@@ -1,4 +1,8 @@
+using Cinemachine;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class PlayerEvents : MonoBehaviour
 {
     private Player player;
@@ -114,6 +118,35 @@ public class PlayerEvents : MonoBehaviour
                 enemy.transform.position = sendEnemyHere;
             }
         }
+        if(SceneManager.GetActiveScene().name == "Level8")
+        {
+            CinemachineVirtualCamera tmpCamera = FindObjectOfType<CinemachineVirtualCamera>();
+
+
+            if (collision.gameObject.name == "LeftZone")
+            {
+                leftCamera.SetActive(true);
+                rightCamera.SetActive(false);
+                goDownCamera.SetActive(false);
+
+
+            }
+            else if(collision.gameObject.name == "RightZone")
+            {
+                leftCamera.SetActive(false);
+                goDownCamera.SetActive(false);
+                rightCamera.SetActive(true);
+            }
+            else if(collision.gameObject.name == "GoDownZone")
+            {
+                leftCamera.SetActive(false);
+                goDownCamera.SetActive(true);
+                rightCamera.SetActive(false);
+            }
+        }
     }
+    public GameObject leftCamera;
+    public GameObject rightCamera;
+    public GameObject goDownCamera;
     
 }
