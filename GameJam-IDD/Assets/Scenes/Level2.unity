@@ -7391,14 +7391,14 @@ RectTransform:
   m_GameObject: {fileID: 1886771330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.8175, y: 5.8175, z: 5.8175}
+  m_LocalScale: {x: 6.3265314, y: 5.8175, z: 5.8175}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1333896551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -459, y: -187}
+  m_AnchoredPosition: {x: -407, y: -187}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1886771332
@@ -7421,7 +7421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 4ce3874ce5e01614c9bd69315b066ac8, type: 3}
+  m_Texture: {fileID: 2800000, guid: 98130565614273b468018a91d9a14e54, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -11032,8 +11032,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -4.08385, y: 15.80705, z: 0}
-    m_Extent: {x: 6.26705, y: 15.56965, z: 0}
+    m_Center: {x: -4.0847, y: 15.81145, z: 0}
+    m_Extent: {x: 6.2639003, y: 15.572749, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
@@ -11843,6 +11843,7 @@ MonoBehaviour:
   onGoalReached: {fileID: 11400000, guid: a3f74e47a95a74c49b5af92019d271ca, type: 2}
   popUpEnter: {fileID: 11400000, guid: 39e61dc89e3b0ab4288eb43d641620cd, type: 2}
   popUpExit: {fileID: 11400000, guid: 2ebf00e2bb5f1d04eb9b77093f689336, type: 2}
+  distanceToPlayer: 3
 --- !u!114 &5044871584285927874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12595,7 +12596,7 @@ PrefabInstance:
       objectReference: {fileID: 5146986213132493015}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0620284
+      value: 3.0620985
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12603,7 +12604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0620284
+      value: 3.0620985
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
