@@ -2410,8 +2410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config:
-    speedrun: 0
-    audio: 0
+    speedrun: 1
+    audio: 1
     kenkri: 0
     time: 0
 --- !u!4 &935353695
