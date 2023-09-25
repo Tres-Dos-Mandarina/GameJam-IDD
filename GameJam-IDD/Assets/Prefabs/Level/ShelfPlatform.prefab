@@ -89,6 +89,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6253518275763274543}
   - component: {fileID: 4756573735579945982}
+  - component: {fileID: 6642707455642499539}
+  - component: {fileID: 6440892536762726645}
   m_Layer: 6
   m_Name: Visuals (1)
   m_TagString: Untagged
@@ -163,6 +165,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6642707455642499539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754090962628070924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3e1b3a5e35ce84ca4a9382ee185f84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ligh: {fileID: 21300000, guid: 7082b5c26355ab44291e31a7e55d73e7, type: 3}
+  shadow: {fileID: 21300000, guid: 30a406d961f6edb4b93cd3ce6db34ffe, type: 3}
+--- !u!114 &6440892536762726645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754090962628070924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d13fdd69cd32c24388a3ed425732b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d2685df5effe0e64b927be8315fa6c03, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6642707455642499539}
+        m_TargetAssemblyTypeName: SpriteChanger, Assembly-CSharp
+        m_MethodName: ChangeShadowState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5883025266795765817
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +217,8 @@ GameObject:
   m_Component:
   - component: {fileID: 344624890535549650}
   - component: {fileID: 7013180998527710542}
+  - component: {fileID: 4432536252361836579}
+  - component: {fileID: 4770778986498219036}
   m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
@@ -247,3 +293,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4432536252361836579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5883025266795765817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3e1b3a5e35ce84ca4a9382ee185f84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ligh: {fileID: 21300000, guid: 7082b5c26355ab44291e31a7e55d73e7, type: 3}
+  shadow: {fileID: 21300000, guid: 30a406d961f6edb4b93cd3ce6db34ffe, type: 3}
+--- !u!114 &4770778986498219036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5883025266795765817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d13fdd69cd32c24388a3ed425732b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d2685df5effe0e64b927be8315fa6c03, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4432536252361836579}
+        m_TargetAssemblyTypeName: SpriteChanger, Assembly-CSharp
+        m_MethodName: ChangeShadowState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
