@@ -208,13 +208,6 @@ public class GameManager : MonoBehaviour
             isMenuOn = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-
-            if (mainMenu != null)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                mainMenu.SetActive(true);
-            }
         }
         else
         {
