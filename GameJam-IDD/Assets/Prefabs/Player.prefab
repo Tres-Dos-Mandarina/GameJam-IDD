@@ -225,6 +225,10 @@ MonoBehaviour:
   jumpAudio: {fileID: 8300000, guid: e7e957e25e697884e95f1f19c0a4ccb4, type: 3}
   stepAudios:
   - {fileID: 8300000, guid: 6a90154587a99e24dbd76dd8923ec0c4, type: 3}
+  highFallClip: {fileID: 8300000, guid: 1df2457863c8cca4da6134d6f71a950b, type: 3}
+  leftCamera: {fileID: 0}
+  rightCamera: {fileID: 0}
+  goDownCamera: {fileID: 0}
 --- !u!114 &6163079583634728320
 MonoBehaviour:
   m_ObjectHideFlags: 0

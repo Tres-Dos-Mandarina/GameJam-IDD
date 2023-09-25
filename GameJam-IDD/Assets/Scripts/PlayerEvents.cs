@@ -27,6 +27,9 @@ public class PlayerEvents : MonoBehaviour
     public AudioClip jumpAudio;
     public AudioClip[] stepAudios;
 
+    private AudioSource src;
+    public AudioClip highFallClip;
+
     private void Awake()
     {
         player = GetComponent<Player>();
@@ -38,6 +41,7 @@ public class PlayerEvents : MonoBehaviour
         if(GameObject.Find("SendEnemyHere"))
             sendEnemyHere = GameObject.Find("SendEnemyHere").GetComponent<Transform>().position;
         enemy = GameObject.FindObjectOfType<Enemy>();
+        src = GetComponent<AudioSource>();
     }
     private void Start()
     {
@@ -61,6 +65,7 @@ public class PlayerEvents : MonoBehaviour
         if (collision.relativeVelocity.y > feedbacksManager.minVelocityToPlayFeedback)
         {
             _onLand.Raise(this, null);
+            src.PlayOneShot(highFallClip);
         }
     }
     // Here it goes the code to fall and jump
