@@ -254,7 +254,7 @@ public class GameManager : MonoBehaviour
             MuteAllAudioSources(GetAllAudioSource());
         }
         GetComponent<Transition>().FadeOut();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1f);
         while (!nextLevel)
         {
             yield return null;
