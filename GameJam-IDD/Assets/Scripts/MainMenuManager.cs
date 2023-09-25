@@ -8,7 +8,7 @@ public class MainMenuManager : MonoBehaviour
 
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject settingsMenu;
-    private VideoPlayer videoPlayer;
+    [SerializeField] private VideoPlayer videoPlayer;
     
     private void Awake()
     {
@@ -16,15 +16,11 @@ public class MainMenuManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
-
-        videoPlayer = FindAnyObjectByType<VideoPlayer>();
     }
 
     private void Start()
     {
         videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "MainMenu.mp4");
-        Debug.Log(videoPlayer.url);
-        Debug.Log(System.IO.Path.Combine(Application.streamingAssetsPath, "MainMenu.mp4"));
         videoPlayer.Play();
         settingsMenu.SetActive(false);
     }
