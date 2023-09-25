@@ -10312,12 +10312,24 @@ PrefabInstance:
       value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 6386167762988381738, guid: e7afe78953a021647b7feaea64f5ae23, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 960d89dd86c9e1643bbe332ec0d5a827, type: 2}
+    - target: {fileID: 6386167762988381738, guid: e7afe78953a021647b7feaea64f5ae23, type: 3}
       propertyPath: m_fontStyle
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6386167762988381738, guid: e7afe78953a021647b7feaea64f5ae23, type: 3}
       propertyPath: m_fontSizeBase
       value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386167762988381738, guid: e7afe78953a021647b7feaea64f5ae23, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6491634119456156259, guid: 960d89dd86c9e1643bbe332ec0d5a827, type: 2}
+    - target: {fileID: 6386167762988381738, guid: e7afe78953a021647b7feaea64f5ae23, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6613899434109478593, guid: e7afe78953a021647b7feaea64f5ae23, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11044,8 +11056,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -4.09165, y: 15.81145, z: 0}
-    m_Extent: {x: 6.26935, y: 15.57665, z: 0}
+    m_Center: {x: -4.0866003, y: 15.803451, z: 0}
+    m_Extent: {x: 6.2752, y: 15.57245, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
