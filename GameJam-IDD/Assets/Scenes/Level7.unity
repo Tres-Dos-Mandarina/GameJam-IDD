@@ -18455,6 +18455,10 @@ PrefabInstance:
       value: Managers
       objectReference: {fileID: 0}
     - target: {fileID: 5557787889872889401, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
+      propertyPath: snoreing
+      value: 
+      objectReference: {fileID: 8300000, guid: c1052f32512b3b54db1a40b9071c3c6f, type: 3}
+    - target: {fileID: 5557787889872889401, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
       propertyPath: deathAudio
       value: 
       objectReference: {fileID: 8300000, guid: 00eae772b373b7c40b7526ed0eeb5419, type: 3}
@@ -18680,8 +18684,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -4.9189997, y: 11.2832, z: 0}
-    m_Extent: {x: 7.1266003, y: 10.8534, z: 0}
+    m_Center: {x: -4.9195004, y: 11.282101, z: 0}
+    m_Extent: {x: 7.1201, y: 10.8589, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
@@ -18822,7 +18826,7 @@ PrefabInstance:
       objectReference: {fileID: 5146986213132493015}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.071451664
+      value: 0.070028305
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18830,7 +18834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.071451664
+      value: 0.070028305
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7962964897407290252}
   - component: {fileID: 5961857031518932322}
   - component: {fileID: 8806629201368865784}
+  - component: {fileID: 5904111844236453076}
+  - component: {fileID: 8132298303414436405}
   m_Layer: 6
   m_Name: Sofa
   m_TagString: Untagged
@@ -130,3 +132,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6851046, y: 0.98743176}
   m_EdgeRadius: 0
+--- !u!114 &5904111844236453076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393117279116695671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d13fdd69cd32c24388a3ed425732b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d2685df5effe0e64b927be8315fa6c03, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8132298303414436405}
+        m_TargetAssemblyTypeName: SpriteChanger, Assembly-CSharp
+        m_MethodName: ChangeShadowState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8132298303414436405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393117279116695671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3e1b3a5e35ce84ca4a9382ee185f84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ligh: {fileID: 21300000, guid: 20e4b399860d1e549946879facfc16fe, type: 3}
+  shadow: {fileID: 21300000, guid: c6f6a6311c66db4459e4f35f15caf780, type: 3}

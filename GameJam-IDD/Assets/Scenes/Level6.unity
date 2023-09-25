@@ -23602,8 +23602,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: -5.77535, y: 20.59235, z: 0}
-    m_Extent: {x: 7.89335, y: 20.139751, z: 0}
+    m_Center: {x: -5.7710505, y: 20.58885, z: 0}
+    m_Extent: {x: 7.90415, y: 20.136251, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
@@ -23945,6 +23945,10 @@ PrefabInstance:
       propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5557787889872889401, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
+      propertyPath: snoreing
+      value: 
+      objectReference: {fileID: 8300000, guid: c1052f32512b3b54db1a40b9071c3c6f, type: 3}
     - target: {fileID: 5557787889872889401, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
       propertyPath: deathAudio
       value: 
@@ -24354,7 +24358,7 @@ PrefabInstance:
       objectReference: {fileID: 5146986213132493015}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3563628
+      value: -2.3572273
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24362,7 +24366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3563628
+      value: -2.3572273
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y

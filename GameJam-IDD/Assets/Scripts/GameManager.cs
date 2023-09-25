@@ -87,6 +87,14 @@ public class GameManager : MonoBehaviour
         List<AudioSource> allAudios = new List<AudioSource>();
         
         allAudios = FindObjectsOfType<AudioSource>().ToList();
+        foreach(AudioSource audioSource in allAudios)
+        {
+            if (audioSource.clip == snoreing)
+            {
+                allAudios.Remove(audioSource);
+                break;
+            }
+        }
         return allAudios;
     }
     public void MuteAllAudioSources(List<AudioSource> audios)
@@ -170,6 +178,8 @@ public class GameManager : MonoBehaviour
     public void HandlePlayerGoal(Component sender, object data)
     {
         player.GetComponent<Player>().DisableMovement();
+        src.clip = snoreing;
+        src.pitch = 1.8f;
         src.PlayOneShot(snoreing);
         timer.StopTimer();
         HandleNextLevel();

@@ -27747,7 +27747,7 @@ Transform:
   m_GameObject: {fileID: 921927342}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.047778, y: 22.26, z: -10}
+  m_LocalPosition: {x: 15.048887, y: 22.26, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32398,7 +32398,7 @@ Transform:
   m_GameObject: {fileID: 1433393744}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.514444, y: 14.860001, z: -10}
+  m_LocalPosition: {x: 22.513763, y: 14.860001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36662,6 +36662,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5557787889872889401, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
+      propertyPath: snoreing
+      value: 
+      objectReference: {fileID: 8300000, guid: c1052f32512b3b54db1a40b9071c3c6f, type: 3}
+    - target: {fileID: 5557787889872889401, guid: a36271b1b99261a489e4ad785ca68f51, type: 3}
       propertyPath: deathAudio
       value: 
       objectReference: {fileID: 8300000, guid: 00eae772b373b7c40b7526ed0eeb5419, type: 3}
@@ -37338,7 +37342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.647778
+      value: 24.646584
       objectReference: {fileID: 0}
     - target: {fileID: 7414129612558079165, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -37346,7 +37350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.514444
+      value: 22.513763
       objectReference: {fileID: 0}
     - target: {fileID: 7854153903541642330, guid: 25d1930ad43eb4747a55f16b62d4e8f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -37439,8 +37443,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 0.736
   m_LocalBounds:
-    m_Center: {x: 1.9429499, y: 6.2181, z: 0}
-    m_Extent: {x: 5.14225, y: 5.8273997, z: 0}
+    m_Center: {x: 1.9417999, y: 6.21285, z: 0}
+    m_Extent: {x: 5.1436996, y: 5.8354497, z: 0}
   m_PointLightInnerAngle: 33.910004
   m_PointLightOuterAngle: 41.06
   m_PointLightInnerRadius: 3.2255123
